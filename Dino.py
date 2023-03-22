@@ -20,6 +20,9 @@ class Dino:
 
     def getName(self):
         return self.name
+
+    def getLvl(self):
+        return self.lvl
     
     def activationLVL(self):
         if self.rarity == "C":
@@ -46,6 +49,9 @@ class Dino:
             return (250*diff)-1500
         if diff < 15:
             return (500*diff)-4500
+
+    def enoughForNextLVL(self):
+        return self.DNAforLVL(self.currentLvl+1) >= self.currentDNA
 
     def getHighestPossibleLVL(self):
         tempDNA = self.currentDNA
