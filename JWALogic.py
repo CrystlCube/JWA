@@ -11,6 +11,16 @@ def getAncestors(child):
         return gen1 + gen2 + [child]
     return [child]
 
+def getAncsWithNeededDNA(child, childDNA):
+    if child in recipes:
+        parent1, parent2 = recipes[child]
+        diffP1 = dinos[child].rarityRank() - dinos[parent1].rarityRank()
+        DNAForP1 = childDNA*(5 if diffP1%2 else 2)*10**int(diffP1/2)
+        diffP2 = dinos[child].rarityRank() - dinos[parent2].rarityRank()
+        DNAForP2 = childDNA*(5 if diffP2%2 else 2)*10**int(diffP2/2)
+        return getAncsWithNeededDNA(parent1, DNAForP1) + getAncsWithNeededDNA(parent2, DNAForP2)
+    return [(child, childDNA)]
+
 
 def getFuseLvl(neededAnc, currentChild):
     if (currentChild == neededAnc): 
@@ -50,25 +60,36 @@ for currentDino in currentDinos:
 # as I go through each dino, I will sort it according to a pre-determined system
 
 for neededDino in neededDinos:
+    allFusingDNA = {}
+    allLvlingDNA = {}
+    priority = 1
     ancestors = getAncestors(neededDino)
+    for anc in ancestors:
+        allFusingDNA[anc] = 0
+        allLvlingDNA[anc] = 0
+
     for anc in ancestors:
         if dinos[anc].getLvl() >= getFuseLvl(anc, neededDino):
             continue
-        if not dinos[anc].enoughForNextLVL():
-            continue
+
+        neededLVL = getFuseLvl(anc, neededDino)
+        lvlingDNA = dinos[anc].DNAupToLVL(neededLVL)
+        returnedFusingDNA = getAncsWithNeededDNA(anc, lvlingDNA)
+        if len(returnedFusingDNA) == 1:
+            allLvlingDNA[anc] += lvlingDNA
+        else:
+            for dinoInfo in returnedFusingDNA:
+                allFusingDNA[dinoInfo[0]] += dinoInfo[1]
+
+    for anc in ancestors:
+        if dinos[anc].getDNA() < allLvlingDNA[anc]:
+            priority = 3
+        elif dinos[anc].getDNA() < allFusingDNA[anc] + allLvlingDNA[anc]:
+            priority = 2
         
 
 
 
-
-
-
-# Sorting system:
-# Look at all the children of the dino in question
-# If every dino 
-
-
-# Is at hybrid level, has enough to take it all the way
 # Is not at hybrid level, has enough to take it all the way
 # Is not at hybrid level, has enough to get to hybrid level
 # Is not at hybrid level, doesn't have enough

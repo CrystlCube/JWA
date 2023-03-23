@@ -8,8 +8,8 @@ class Dino:
         self.second = None
 
     def updateInfo(self, newDNA, newLvl, newRarity):
-        self.currentDNA = newDNA
-        self.currentLvl = newLvl
+        self.amount = newDNA
+        self.lvl = newLvl
         self.rarity = newRarity
 
     def setFirst(self, first):
@@ -23,35 +23,55 @@ class Dino:
 
     def getLvl(self):
         return self.lvl
+
+    def getDNA(self):
+        return self.amount
+
+    def getRarity(self):
+        return self.rarity
     
     def activationLVL(self):
+        return 5*self.rarityRank()
+
+    def rarityRank(self):
         if self.rarity == "C":
             return 0
         if self.rarity == "R":
-            return 5
+            return 1
         if self.rarity == "E":
-            return 10
+            return 2
         if self.rarity == "L":
-            return 15
+            return 3
         if self.rarity == "U":
-            return 20
+            return 4
         if self.rarity == "A":
-            return 25
+            return 5
         return 0
 
     def DNAforLVL(self, lvl):
         diff = lvl - self.activationLVL()
+        if diff == 1:
+            return (self.rarityRank()+1)*50
         if diff < 7:
             return (50*diff)+50
         if diff < 8:
             return (100*diff)-300
         if diff < 12:
             return (250*diff)-1500
-        if diff < 15:
+        if diff < 16:
             return (500*diff)-4500
+        return 10*self.DNAforLVL(lvl-10)
+
+    def DNAupToLVL(self, lvl):
+        total = 0
+        temp = self.lvl
+        while temp < lvl:
+            total += self.DNAforLVL(temp+1)
+            temp += 1
+        return total
 
     def enoughForNextLVL(self):
-        return self.DNAforLVL(self.currentLvl+1) >= self.currentDNA
+        return self.amount >= self.DNAforLVL(self.lvl+1)
 
     def getHighestPossibleLVL(self):
         tempDNA = self.currentDNA
