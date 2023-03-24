@@ -31,7 +31,7 @@ def getDNAAmount(dino):
         DNAFromP1 = math.floor(p1DNA/((5 if diffP1%2 else 2)*10**int(diffP1/2)))
         diffP2 = dinos[dino].rarityRank() - dinos[parent2].rarityRank()
         DNAFromP2 = math.floor(p2DNA/((5 if diffP2%2 else 2)*10**int(diffP2/2)))
-        return min(DNAFromP2, DNAFromP1)
+        return min(DNAFromP2, DNAFromP1)+dinos[dino].getDNA()
     return dinos[dino].getDNA()
 
 def getFuseLvl(neededAnc, currentChild):
@@ -72,7 +72,7 @@ for currentDino in currentDinos:
 # as I go through each dino, I will sort it according to a pre-determined system
 priorities = {}
 for neededDino in neededDinos:
-    if neededDino == 'Pyrorixis':
+    if neededDino == 'Ankylodactylus':
         print('yee')
     allFusingDNA = {}
     allLvlingDNA = {}
@@ -112,8 +112,16 @@ for neededDino in neededDinos:
         else:
             priorities[neededDino][1][anc] = 1
     priorities[neededDino][0] = max([priorities[neededDino][1][i] for i in priorities[neededDino][1]])
-x = 3
 
+dinoTags = {}
+for dino in dinos:
+    dinoTags[dino] = 0
+for dinoInfo in priorities:
+    dinoTags[dinoInfo] = max(dinoTags[dinoInfo], priorities[dinoInfo][0])
+    for anc in priorities[dinoInfo][1]:
+        dinoTags[anc] = max(dinoTags[anc], priorities[dinoInfo][1][anc])
+
+x=3
         
         
 
