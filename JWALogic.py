@@ -70,15 +70,18 @@ for currentDino in currentDinos:
 
 # for every needed dino, I want to look at what is required to get it
 # as I go through each dino, I will sort it according to a pre-determined system
-
+priorities = {}
 for neededDino in neededDinos:
+    if neededDino == 'Pyrorixis':
+        print('yee')
     allFusingDNA = {}
     allLvlingDNA = {}
-    priority = 0
+    priorities[neededDino] = [0, {}]
     ancestors = getAncestors(neededDino)
     for anc in ancestors:
         allFusingDNA[anc] = 0
         allLvlingDNA[anc] = 0
+        priorities[neededDino][1][anc] = 0
 
     for anc in ancestors:
         if dinos[anc].getLvl() >= getFuseLvl(anc, neededDino):
@@ -103,11 +106,15 @@ for neededDino in neededDinos:
                 continue
         
         if getDNAAmount(anc) < allLvlingDNA[anc]:
-            priority = 3
+            priorities[neededDino][1][anc] = 3
         elif getDNAAmount(anc) < allFusingDNA[anc] + allLvlingDNA[anc]:
-            priority = 2
+            priorities[neededDino][1][anc] = 2
         else:
-            priority = 1
+            priorities[neededDino][1][anc] = 1
+    priorities[neededDino][0] = max([priorities[neededDino][1][i] for i in priorities[neededDino][1]])
+x = 3
+
+        
         
 
 
