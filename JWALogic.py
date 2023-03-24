@@ -1,4 +1,5 @@
 from Dino import Dino
+import math
 
 recipes = {}
 dinos = {}
@@ -21,6 +22,17 @@ def getAncsWithNeededDNA(child, childDNA):
         return getAncsWithNeededDNA(parent1, DNAForP1) + getAncsWithNeededDNA(parent2, DNAForP2)
     return [(child, childDNA)]
 
+def getDNAAmount(dino):
+    if dino in recipes:
+        parent1, parent2 = recipes[dino]
+        p1DNA = getDNAAmount(parent1)
+        p2DNA = getDNAAmount(parent2)
+        diffP1 = dinos[dino].rarityRank() - dinos[parent1].rarityRank()
+        DNAFromP1 = math.floor(p1DNA/((5 if diffP1%2 else 2)*10**int(diffP1/2)))
+        diffP2 = dinos[dino].rarityRank() - dinos[parent2].rarityRank()
+        DNAFromP2 = math.floor(p2DNA/((5 if diffP2%2 else 2)*10**int(diffP2/2)))
+        return min(DNAFromP2, DNAFromP1)
+    return dinos[dino].getDNA()
 
 def getFuseLvl(neededAnc, currentChild):
     if (currentChild == neededAnc): 
@@ -62,7 +74,7 @@ for currentDino in currentDinos:
 for neededDino in neededDinos:
     allFusingDNA = {}
     allLvlingDNA = {}
-    priority = 1
+    priority = 0
     ancestors = getAncestors(neededDino)
     for anc in ancestors:
         allFusingDNA[anc] = 0
@@ -75,17 +87,27 @@ for neededDino in neededDinos:
         neededLVL = getFuseLvl(anc, neededDino)
         lvlingDNA = dinos[anc].DNAupToLVL(neededLVL)
         returnedFusingDNA = getAncsWithNeededDNA(anc, lvlingDNA)
-        if len(returnedFusingDNA) == 1:
-            allLvlingDNA[anc] += lvlingDNA
-        else:
+        allLvlingDNA[anc] += lvlingDNA
+        if len(returnedFusingDNA) != 1:
             for dinoInfo in returnedFusingDNA:
                 allFusingDNA[dinoInfo[0]] += dinoInfo[1]
 
     for anc in ancestors:
-        if dinos[anc].getDNA() < allLvlingDNA[anc]:
+        if dinos[anc].getLvl() >= getFuseLvl(anc, neededDino):
+            continue
+        if anc in recipes:
+            parent1, parent2 = recipes[anc]
+            if getFuseLvl(parent1, anc) > dinos[parent1].getLvl():
+                continue
+            if getFuseLvl(parent2, anc) > dinos[parent2].getLvl():
+                continue
+        
+        if getDNAAmount(anc) < allLvlingDNA[anc]:
             priority = 3
-        elif dinos[anc].getDNA() < allFusingDNA[anc] + allLvlingDNA[anc]:
+        elif getDNAAmount(anc) < allFusingDNA[anc] + allLvlingDNA[anc]:
             priority = 2
+        else:
+            priority = 1
         
 
 
