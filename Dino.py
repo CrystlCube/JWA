@@ -7,16 +7,40 @@ class Dino:
         self.first = None
         self.second = None
 
+    def __init__(self, data_list: list) -> None:
+        """
+        Initializes a dino with the given data
+
+        Parameters
+        ----------
+        data_list : list
+            A list of data for the dino, formatted as:
+                Dinosaur name (str)
+                Level of dinosaur (int)
+                Amount of DNA (int)
+                Rarity of dinosaur (str)
+        """
+        self.name, self.lvl, self.amount, self.rarity = data_list
+        self.lvl = int(self.lvl)
+        self.amount = int(self.amount)
+
     def updateInfo(self, newDNA, newLvl, newRarity):
         self.amount = newDNA
         self.lvl = newLvl
         self.rarity = newRarity
 
-    def setFirst(self, first):
-        self.first = first
-
-    def setSecond(self, second):
-        self.second = second
+    def set_parents(self, parents: tuple[str, str]) -> None:
+        """
+        Sets the parents of the current dino
+        
+        Parameters
+        ----------
+        parents : tuple[str, str]
+            The names of the two parents, stored as strings in a tuple
+        """
+        
+        self.first = parents[0]
+        self.second = parents[1]
 
     def getName(self):
         return self.name
