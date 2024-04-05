@@ -18,6 +18,10 @@ class GettingInfo:
     -------
     create_dino_info()
         Grabs current dinosaur information from CurrentDinos.txt, recipes from DinoRecipes.txt, and needed dinosaurs from DinosToGet.txt
+    input_dinos()
+
+    save_dino_info()
+
     """
     
     def __init__(self) -> None:
@@ -25,6 +29,8 @@ class GettingInfo:
         self.needed_dinos = set()
 
         self.create_dino_info()
+        self.input_dinos()
+        self.save_dino_info()
 
     def create_dino_info(self) -> None:
         """
@@ -49,6 +55,32 @@ class GettingInfo:
         self.needed_dinos = set(dino_reader.read().split("\n"))
         dino_reader.close()
 
+    def input_dinos(self):
+        while True:
+            wanted_input = input('What dinosaur would you like to get? (Type \'quit\' to quit): ')
+            if (wanted_input == 'quit'):
+                break
+            print()
+            self.get_dino_info(wanted_input)
+            self.needed_dinos.add(wanted_input)
+            os.system('cls')
+
+    def get_dino_info(self, dino_name):
+        if dino_name not in self.current_dinos:
+            os.system('cls')
+            if input('Is ' + dino_name + ' a hybrid? (Type \'Y\' if so): ') == 'Y':
+                print()
+                first = input('Type the first parent of ' + dino_name + ': ')
+                print('\n')
+                second = input('Type the second parent of ' + dino_name + ': ')
+                print('\n')
+            os.system('cls')
+            lvl = input('What level is ' + dino_name + '? ')
+            amount = input('How much DNA does ' + dino_name + ' have? ')
+            rarity = input('What rarity is ' + dino_name + '? ')
+            self.current_dinos[dino_name] = Dino(dino_name, lvl, amount, rarity, first, second)
+            self.get_dino_info(first)
+            self.get_dino_info(second)
 
 # def checkHybrid(dino):
 #     os.system('cls')

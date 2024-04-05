@@ -1,11 +1,11 @@
 class Dino:
-    def __init__(self, name, lvl=0, amount=0, rarity=''):
+    def __init__(self, name, lvl=0, amount=0, rarity='', first=None, second=None):
         self.name = name
         self.lvl = lvl
         self.amount = amount
         self.rarity = rarity
-        self.first = None
-        self.second = None
+        self.first = first
+        self.second = second
 
     def __init__(self, data_list: list) -> None:
         """
@@ -23,6 +23,8 @@ class Dino:
         self.name, self.lvl, self.amount, self.rarity = data_list
         self.lvl = int(self.lvl)
         self.amount = int(self.amount)
+        self.first = None
+        self.second = None
 
     def updateInfo(self, newDNA, newLvl, newRarity):
         self.amount = newDNA
