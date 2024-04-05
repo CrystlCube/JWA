@@ -4,7 +4,6 @@ import os
 class GettingInfo:
     """
     A class in charge of managing adding new dinosaurs and their parents
-
     ...
 
     Attributes
@@ -19,18 +18,24 @@ class GettingInfo:
     create_dino_info()
         Grabs current dinosaur information from CurrentDinos.txt, recipes from DinoRecipes.txt, and needed dinosaurs from DinosToGet.txt
     input_dinos()
-
+        Gets new dinosaur information from the user and saves it
     save_dino_info()
 
     """
     
     def __init__(self) -> None:
+        """
+        Starts the getting dinosaur info task
+        1. Grab dinosaur information from the database
+        2. Add any additional dinosaur information
+        3. Put all compiled dinosaur information back in the database
+        """
         self.current_dinos = {}
         self.needed_dinos = set()
 
         self.create_dino_info()
         self.input_dinos()
-        self.save_dino_info()
+        #self.save_dino_info()
 
     def create_dino_info(self) -> None:
         """
@@ -55,7 +60,11 @@ class GettingInfo:
         self.needed_dinos = set(dino_reader.read().split("\n"))
         dino_reader.close()
 
-    def input_dinos(self):
+    def input_dinos(self) -> None:
+        """
+        Prompts the user for input for dinos that need to be entered into the system
+        Checks each dino for parents and adds them to the database as well
+        """
         while True:
             wanted_input = input('What dinosaur would you like to get? (Type \'quit\' to quit): ')
             if (wanted_input == 'quit'):
@@ -65,72 +74,40 @@ class GettingInfo:
             self.needed_dinos.add(wanted_input)
             os.system('cls')
 
-    def get_dino_info(self, dino_name):
+    def get_dino_info(self, dino_name: str) -> None:
+        """
+        Given a dinosaur name, prompt the user for information about the dinosaur
+        If the dinosaur already exists in the database, no questions are prompted
+        Ask if the dinosaur is a hybrid, and if so, ask for the parents names, then run the same function with those names
+
+        Parameters
+        ----------
+        dino_name : str
+            The name of the dinosaur for which information is needed
+        """
+
+        # Only getting dinosaur info for dinosaurs that aren't in the database
         if dino_name not in self.current_dinos:
             os.system('cls')
+            first = None
+            second = None
+
+            # Check if the dinosaur is a hybrid
             if input('Is ' + dino_name + ' a hybrid? (Type \'Y\' if so): ') == 'Y':
                 print()
                 first = input('Type the first parent of ' + dino_name + ': ')
-                print('\n')
                 second = input('Type the second parent of ' + dino_name + ': ')
-                print('\n')
+
+            # Get needed dinosaur info and put it in the database
             os.system('cls')
             lvl = input('What level is ' + dino_name + '? ')
             amount = input('How much DNA does ' + dino_name + ' have? ')
             rarity = input('What rarity is ' + dino_name + '? ')
-            self.current_dinos[dino_name] = Dino(dino_name, lvl, amount, rarity, first, second)
-            self.get_dino_info(first)
-            self.get_dino_info(second)
+            self.current_dinos[dino_name] = Dino([dino_name, lvl, amount, rarity, first, second])
 
-# def checkHybrid(dino):
-#     os.system('cls')
-#     isHybridInput = input('Is ' + dino.getName() + ' a hybrid? (Type \'Y\' if so): ')
-#     isHybrid = (isHybridInput == 'Y')
-#     if (isHybrid):
-#         print()
-
-#         firstInput = input('Type the first parent of ' + dino.getName() + ': ')
-#         print()
-#         first = getDinoInfo(firstInput)
-#         dino.setFirst(first)
-#         print()
-
-#         secondInput = input('Type the second parent of ' + dino.getName() + ': ')
-#         print()
-#         second = getDinoInfo(secondInput)
-#         dino.setSecond(second)
-#         print()
-#         recipes.add(dino.getName() + ': ' + firstInput + ' ' + secondInput)
-
-#         checkHybrid(first)
-#         checkHybrid(second)
-
-
-# def getDinoInfo(name):
-#     for dino in currentDinos:
-#         info = dino.split(' ')
-#         if (info[0] == name):
-#             return Dino(info[0], info[1], info[2], info[3])
-#     lvl = input('What level is ' + name + '? ')
-#     amount = input('How much DNA does ' + name + ' have? ')
-#     rarity = input('What rarity is ' + name + '? ')
-#     test = Dino(name, lvl, amount, rarity)
-#     currentDinos.add(test.toFile())
-#     return test
-
-# input('Welcome to Dino Input. Type quit at any point to leave. Press Enter to begin.')
-# os.system('cls')
-
-# while True:
-#     wantedInput = input('What dinosaur would you like to get? (Type \'quit\' to quit): ')
-#     if (wantedInput == 'quit'):
-#         break
-#     print()
-#     wantedDino = getDinoInfo(wantedInput)
-#     checkHybrid(wantedDino)
-#     neededDinos.add(wantedDino.name)
-#     os.system('cls')
-
+            # If parents exist for the current dinosaur, check them as well
+            if first: self.get_dino_info(first)
+            if second: self.get_dino_info(second)
 
 # neededDinos = [i for i in neededDinos]
 # neededDinos.sort()
