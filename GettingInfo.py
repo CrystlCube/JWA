@@ -35,7 +35,7 @@ class GettingInfo:
 
         self.create_dino_info()
         self.input_dinos()
-        #self.save_dino_info()
+        self.save_dino_info()
 
     def create_dino_info(self) -> None:
         """
@@ -109,29 +109,23 @@ class GettingInfo:
             if first: self.get_dino_info(first)
             if second: self.get_dino_info(second)
 
-# neededDinos = [i for i in neededDinos]
-# neededDinos.sort()
-# dinoWriter = open("JWA2\DinosToGet.txt", "w")
-# for dino in neededDinos:
-#     if dino != '':
-#         dinoWriter.write(dino + "\n")
-# dinoWriter.close()
+    def save_dino_info(self):
+        # TODO
+        needed_dinos_output = '\n'.join(self.needed_dinos)
+        current_dinos_output = '\n'.join([self.current_dinos[dino].to_string() for dino in self.current_dinos])
+        recipe_output = '\n'.join([self.current_dinos[dino].parent_to_string() for dino in self.current_dinos if self.current_dinos[dino].is_hybrid()])
 
-# recipes = [i for i in recipes]
-# recipes.sort()
-# recipeWriter = open("JWA2\DinoRecipes.txt", "w")
-# for recipe in recipes:
-#     if recipe != '':
-#         recipeWriter.write(recipe + "\n")
-# recipeWriter.close()
-    
-# currentDinos = [i for i in currentDinos]
-# currentDinos.sort()
-# dinoWriter = open("JWA2\CurrentDinos.txt", "w")
-# for dino in currentDinos:
-#     if dino != '':
-#         dinoWriter.write(dino + "\n")
-# dinoWriter.close()
+        dino_writer = open("DinosToGet.txt", "w")
+        dino_writer.write(needed_dinos_output)
+        dino_writer.close()
 
+        dino_writer = open("CurrentDinos.txt", "w")
+        dino_writer.write(current_dinos_output)
+        dino_writer.close()
+
+        dino_writer = open("DinoRecipes.txt", "w")
+        dino_writer.write(recipe_output)
+        dino_writer.close()
+        
 if __name__=='__main__':
     getting_info = GettingInfo()

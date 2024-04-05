@@ -22,6 +22,8 @@ class Dino:
     -------
     set_parents()
         Set first and second equal to the specified parent names
+    is_hybrid()
+        Returns whether or not the dino is a hybrid (i.e. has parents)
 
     """
     def __init__(self, data_list: list) -> None:
@@ -65,6 +67,10 @@ class Dino:
         
         self.first = parents[0]
         self.second = parents[1]
+
+    def is_hybrid(self) -> bool:
+        # TODO
+        return bool(self.first)
 
     # def getName(self):
     #     return self.name
@@ -127,6 +133,10 @@ class Dino:
     #         self.first.toString(depth + 1)
     #         self.second.toString(depth + 1)
 
-    # def toFile(self):
-    #     dinoInfo = self.name + ' ' + self.lvl + ' ' + self.amount + ' ' + self.rarity
-    #     return dinoInfo
+    def parent_to_string(self) -> str:
+        # TODO
+        return self.name + ': ' + self.first + ' ' + self.second
+
+    def to_string(self) -> str:
+        # TODO
+        return self.name + ' ' + self.lvl + ' ' + self.amount + ' ' + self.rarity
