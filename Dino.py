@@ -24,6 +24,10 @@ class Dino:
         Set first and second equal to the specified parent names
     is_hybrid()
         Returns whether or not the dino is a hybrid (i.e. has parents)
+    parent_to_string()
+        Returns a dino's parental information as a string
+    to_string()
+        Returns a dino's information as a string
 
     """
     def __init__(self, data_list: list) -> None:
