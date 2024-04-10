@@ -20,7 +20,7 @@ class GettingInfo:
     input_dinos()
         Gets new dinosaur information from the user and saves it
     save_dino_info()
-
+        Saves dinosaur information to CurrentDinos.txt, DinoRecipes.txt, and DinosToGet.txt
     """
     
     def __init__(self) -> None:
@@ -110,7 +110,9 @@ class GettingInfo:
             if second: self.get_dino_info(second)
 
     def save_dino_info(self):
-        # TODO
+        """
+        Writes each list of dinosaurs (needed, current, and their recipes) as output strings and saves them to their corresponding files
+        """
         needed_dinos_output = '\n'.join(self.needed_dinos)
         current_dinos_output = '\n'.join([self.current_dinos[dino].to_string() for dino in self.current_dinos])
         recipe_output = '\n'.join([self.current_dinos[dino].parent_to_string() for dino in self.current_dinos if self.current_dinos[dino].is_hybrid()])

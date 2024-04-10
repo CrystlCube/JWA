@@ -69,7 +69,14 @@ class Dino:
         self.second = parents[1]
 
     def is_hybrid(self) -> bool:
-        # TODO
+        """
+        Returns whether the current dino is a hybrid or not by checking if it has a parent
+
+        Returns
+        -------
+        bool
+            Whether or not the current dino is a hybrid
+        """
         return bool(self.first)
 
     # def getName(self):
@@ -134,9 +141,24 @@ class Dino:
     #         self.second.toString(depth + 1)
 
     def parent_to_string(self) -> str:
-        # TODO
+        """
+        Returns a string representing the dinosaur's relation to its parents
+        Only is supposed to be called for dinosaurs with parents
+
+        Returns
+        -------
+        str
+            A string containing the dinosaur, a colon, and the dinosaur's two parents
+        """
         return self.name + ': ' + self.first + ' ' + self.second
 
     def to_string(self) -> str:
-        # TODO
+        """
+        Returns a string representing the dinosaur's information
+
+        Returns
+        -------
+        str
+            A string containing the dinosaur's name, level, amount of DNA, and its rarity
+        """
         return self.name + ' ' + self.lvl + ' ' + self.amount + ' ' + self.rarity
