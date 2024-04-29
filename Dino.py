@@ -87,7 +87,7 @@ class Dino:
     # def getName(self):
     #     return self.name
 
-    def get_lvl(self) -> int:
+    def get_level(self) -> int:
         """
         Returns the current level of the dino
 
@@ -221,4 +221,4 @@ class Dino:
         str
             A string containing the dinosaur's name, level, amount of DNA, and its rarity
         """
-        return self.name + ' ' + self.lvl + ' ' + self.amount + ' ' + self.rarity
+        return self.name + ' ' + str(self.lvl) + ' ' + str(self.amount) + ' ' + self.rarity

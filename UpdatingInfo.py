@@ -1,3 +1,5 @@
+import os
+
 from Dino import Dino
 import FileFunctions
 
@@ -49,29 +51,51 @@ class UpdatingInfo:
         score = {}
         for key in self.current_dinos:
             if key not in self.needed_dinos:
-                score[key] = self.current_dinos[key].get_lvl() * 10 + self.current_dinos[key].rarity_rank()
+                score[key] = self.current_dinos[key].get_level() * 10 + self.current_dinos[key].rarity_rank()
             else:
                 score[key] = -300 if not self.current_dinos[key].get_amount() else -1*(self.current_dinos[key].activation_amount()-self.current_dinos[key].get_amount())
 
         return sorted(sorted(self.current_dinos, reverse=True), key = lambda dino: score[dino])
 
     def update_dinos(self):
-        #TODO
+        """
+        First, get a sorted list of dinosaur names from generate_sorted_dinos_list()
+        Next, go through each dinosaur name in the sorted list and check with the user if its information is correct
+        If not, change current_dinos to reflect the newer information
+        """
         sorted_dinos = self.generate_sorted_dinos_list()
+        print('Welcome to the Dino Updater! Each dino and its information will be displayed. If the information is correct, just press Enter.')
+        print('If it is not but it is the correct dino, type \'c\' and follow the prompts.')
+        print('If it is not the right dino, type \'w\' and follow the prompts.')
+        input('Press Enter to continue.')
         while sorted_dinos:
             current_name = sorted_dinos[-1]
             current_dino = self.current_dinos[current_name]
-            user_input = input(current_name + ': ' + str(current_dino.get_lvl()) + ' ' + str(current_dino.get_amount()))
+
+            os.system('cls')
+            user_input = input(current_name + '\nLevel: ' + str(current_dino.get_level()) + '\nAmount: ' + str(current_dino.get_amount()) + '\n')
+
             if user_input == '':
                 sorted_dinos.pop()
             elif user_input == 'c': # Change
-                #TODO
-                pass
+                os.system('cls')
+                lvl = input('Enter the correct level for ' + current_name + '.\nLevel: ')
+                os.system('cls')
+                amount = input('Enter the correct amount for ' + current_name + '.\nAmount: ')
+
+                sorted_dinos.pop()
+                self.current_dinos[current_name].set_level(lvl)
+                self.current_dinos[current_name].set_amount(amount)
             elif user_input == 'w': # Wrong
-                #TODO fix the input so it's nice
-                actual_name, lvl, amount = input().split(' ')
+                os.system('cls')
+                actual_name = input('Enter the name of the dino that should be next.\nName: ')
+                os.system('cls')
+                lvl = input('Enter the correct level for ' + actual_name + '.\nLevel: ')
+                os.system('cls')
+                amount = input('Enter the correct amount for ' + actual_name + '.\nAmount: ')
+
                 sorted_dinos.remove(actual_name)
-                self.current_dinos[actual_name].set_lvl(lvl)
+                self.current_dinos[actual_name].set_level(lvl)
                 self.current_dinos[actual_name].set_amount(amount)
 
     def all_dino_info(self) -> tuple[dict[str: Dino], set[str]]:
@@ -97,6 +121,6 @@ if __name__=='__main__':
         3. Puts all compiled dinosaur information back in the database
     """
     current_dinos, needed_dinos = FileFunctions.create_dino_info()
-    getting_info = UpdatingInfo(current_dinos, needed_dinos)
-    #current_dinos, needed_dinos = getting_info.all_dino_info()
-    #FileFunctions.save_dino_info(current_dinos, needed_dinos)
+    updating_info = UpdatingInfo(current_dinos, needed_dinos)
+    current_dinos, needed_dinos = updating_info.all_dino_info()
+    FileFunctions.save_dino_info(current_dinos, needed_dinos)

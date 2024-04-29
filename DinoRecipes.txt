@@ -69,7 +69,7 @@ Sarcorixis: Sarcosuchus Einiasuchus
 Scutophicyon: Amphicyon Scutosaurus
 Segnoraptor: Therizinosaurus Microraptor
 Segnotherisaurus: Segnoraptor Arctodus
-Skoolasaurus: Koolasuchus Scolosaurus 
+Skoolasaurus: Koolasuchus Scolosaurus
 Skoonasaurus: Sonorasaurus Skoolasaurus
 Smilocephalosaurus: Smilodon Pachycephalosaurus
 Smilonemys: Smilocephalosaurus Carbonemys
