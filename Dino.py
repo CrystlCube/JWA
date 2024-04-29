@@ -28,6 +28,7 @@ class Dino:
         Returns a dino's parental information as a string
     to_string()
         Returns a dino's information as a string
+    TODO
 
     """
     def __init__(self, data_list: list) -> None:
@@ -86,11 +87,49 @@ class Dino:
     # def getName(self):
     #     return self.name
 
-    # def getLvl(self):
-    #     return self.lvl
+    def get_lvl(self) -> int:
+        """
+        Returns the current level of the dino
 
-    # def getDNA(self):
-    #     return self.amount
+        Returns
+        -------
+        int
+            The current level of the dino
+        """
+        return self.lvl
+
+    def get_amount(self) -> int:
+        """
+        Returns the amount of DNA the dino currently has
+
+        Returns
+        -------
+        int
+            The DNA amount of the dino
+        """
+        return self.amount
+    
+    def set_level(self, lvl):
+        """
+        Sets the current level of the dino given the input
+
+        Parameters
+        ----------
+        lvl: int
+            The new level of the dino
+        """
+        self.lvl = lvl
+    
+    def set_amount(self, amount):
+        """
+        Sets the current level of the dino given the input
+
+        Parameters
+        ----------
+        lvl: int
+            The new level of the dino
+        """
+        self.amount = amount
 
     # def getRarity(self):
     #     return self.rarity
@@ -98,23 +137,40 @@ class Dino:
     # def activationLvl(self):
     #     return 5*self.rarityRank()
     
-    # def activationDNA(self):
-    #     return 50*(self.rarityRank()+1)
+    def activation_amount(self) -> int:
+        """
+        Returns the amount of DNA required to unlock the dino
+        This amount follows a linear scale dependent on the rarity of the dino
 
-    # def rarityRank(self):
-    #     if self.rarity == "C":
-    #         return 0
-    #     if self.rarity == "R":
-    #         return 1
-    #     if self.rarity == "E":
-    #         return 2
-    #     if self.rarity == "L":
-    #         return 3
-    #     if self.rarity == "U":
-    #         return 4
-    #     if self.rarity == "A":
-    #         return 5
-    #     return 0
+        Returns
+        -------
+        int
+            The amount of DNA needed
+        """
+        return 50*(self.rarity_rank()+1)
+
+    def rarity_rank(self) -> int:
+        """
+        Returns a integer value of the rarity, with Apex being highest at 5, and Common being lowest at 0
+
+        Returns
+        -------
+        int
+            The integer value of the rarity
+        """
+        if self.rarity == "C":
+            return 0
+        if self.rarity == "R":
+            return 1
+        if self.rarity == "E":
+            return 2
+        if self.rarity == "L":
+            return 3
+        if self.rarity == "U":
+            return 4
+        if self.rarity == "A":
+            return 5
+        return 0
 
     # def DNAforLvl(self, lvl):
     #     diff = lvl - self.activationLvl()

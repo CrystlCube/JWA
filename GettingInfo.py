@@ -1,5 +1,7 @@
-from Dino import Dino
 import os
+
+from Dino import Dino
+import FileFunctions
 
 class GettingInfo:
     """
@@ -8,57 +10,36 @@ class GettingInfo:
 
     Attributes
     ----------
-    current_dinos : dict(str : Dino)
+    current_dinos : dict[str : Dino]
         A mapping of dinosaur names to the corresponding Dino objects
-    needed_dinos : set(str)
+    needed_dinos : set[str]
         A set of names of dinosaurs that need to be unlocked
 
     Methods
     -------
-    create_dino_info()
-        Grabs current dinosaur information from CurrentDinos.txt, recipes from DinoRecipes.txt, and needed dinosaurs from DinosToGet.txt
     input_dinos()
         Gets new dinosaur information from the user and saves it
-    save_dino_info()
-        Saves dinosaur information to CurrentDinos.txt, DinoRecipes.txt, and DinosToGet.txt
+    get_dino_info()
+        Gets information from the user about the specified dinosaur
+    all_dino_info()
+        Returns the current and needed dinosaur information
     """
     
-    def __init__(self) -> None:
+    def __init__(self, c_dinos: dict[str: Dino], n_dinos: set[str]) -> None:
         """
-        Starts the getting dinosaur info task
-        1. Grab dinosaur information from the database
-        2. Add any additional dinosaur information
-        3. Put all compiled dinosaur information back in the database
+        Initializes the GettingInfo class with the given current and needed dinos, then runs input_dinos()
+        
+        Parameters
+        ----------
+        c_dinos: dict[str: Dino]
+            A dictionary that stores keys as names of current dinosaurs, and the values as the corresponding Dino objects
+        n_dinos: set[str]
+            A set of needed dinosaur names
         """
-        self.current_dinos = {}
-        self.needed_dinos = set()
+        self.current_dinos = c_dinos
+        self.needed_dinos = n_dinos
 
-        self.create_dino_info()
         self.input_dinos()
-        self.save_dino_info()
-
-    def create_dino_info(self) -> None:
-        """
-        Grabs current dinosaur information from CurrentDinos.txt, recipes from DinoRecipes.txt, and needed dinosaurs from DinosToGet.txt
-        """
-
-        # Adds each dinosaur from CurrentDinos.txt into self.current_dinos as a map from a name to a Dino object
-        dino_reader = open("CurrentDinos.txt", "r")
-        self.current_dinos = {i.split(' ')[0]: Dino(i.split(' ')) for i in dino_reader.read().split('\n')}
-        dino_reader.close()
-
-        # Takes each pair of parents from DinoRecipes.txt and adds them to the corresponding child in self.current_dinos
-        dino_reader = open("DinoRecipes.txt", "r")
-        for recipe in dino_reader.read().split("\n"):
-            child, parent_string = recipe.split(': ')
-            parents = parent_string.split(' ')
-            self.current_dinos[child].set_parents(parents)
-        dino_reader.close()
-
-        # Adds each needed dinosaur from DinosToGet.txt to self.needed_dinos
-        dino_reader = open("DinosToGet.txt", "r")
-        self.needed_dinos = set(dino_reader.read().split("\n"))
-        dino_reader.close()
 
     def input_dinos(self) -> None:
         """
@@ -109,25 +90,28 @@ class GettingInfo:
             if first: self.get_dino_info(first)
             if second: self.get_dino_info(second)
 
-    def save_dino_info(self):
+    def all_dino_info(self) -> tuple[dict[str: Dino], set[str]]:
         """
-        Writes each list of dinosaurs (needed, current, and their recipes) as output strings and saves them to their corresponding files
+        A getter for the current dinosaur information and the needed dinosaur information
+
+        Returns
+        -------
+        dict[str: Dino]
+            A dictionary that stores keys as names of current dinosaurs, and the values as the corresponding Dino objects
+        set[str]
+            A set of needed dinosaur names
         """
-        needed_dinos_output = '\n'.join(self.needed_dinos)
-        current_dinos_output = '\n'.join([self.current_dinos[dino].to_string() for dino in self.current_dinos])
-        recipe_output = '\n'.join([self.current_dinos[dino].parent_to_string() for dino in self.current_dinos if self.current_dinos[dino].is_hybrid()])
+        return self.current_dinos, self.needed_dinos
 
-        dino_writer = open("DinosToGet.txt", "w")
-        dino_writer.write(needed_dinos_output)
-        dino_writer.close()
-
-        dino_writer = open("CurrentDinos.txt", "w")
-        dino_writer.write(current_dinos_output)
-        dino_writer.close()
-
-        dino_writer = open("DinoRecipes.txt", "w")
-        dino_writer.write(recipe_output)
-        dino_writer.close()
         
 if __name__=='__main__':
-    getting_info = GettingInfo()
+    """
+    Executes the following steps
+        1. Grabs dinosaur information from the database
+        2. Adds any additional dinosaur information using the GettingInfo class
+        3. Puts all compiled dinosaur information back in the database
+    """
+    current_dinos, needed_dinos = FileFunctions.create_dino_info()
+    getting_info = GettingInfo(current_dinos, needed_dinos)
+    current_dinos, needed_dinos = getting_info.all_dino_info()
+    FileFunctions.save_dino_info(current_dinos, needed_dinos)
