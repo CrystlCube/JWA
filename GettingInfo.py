@@ -73,18 +73,22 @@ class GettingInfo:
             first = None
             second = None
 
-            # Check if the dinosaur is a hybrid
-            if input('Is ' + dino_name + ' a hybrid? (Type \'Y\' if so): ') == 'Y':
-                print()
-                first = input('Type the first parent of ' + dino_name + ': ')
-                second = input('Type the second parent of ' + dino_name + ': ')
-
             # Get needed dinosaur info and put it in the database
             os.system('cls')
             lvl = input('What level is ' + dino_name + '? ')
             amount = input('How much DNA does ' + dino_name + ' have? ')
             rarity = input('What rarity is ' + dino_name + '? ')
             self.current_dinos[dino_name] = Dino([dino_name, lvl, amount, rarity, first, second])
+
+            # Check if the dinosaur isn't yet unlocked
+            if self.current_dinos[dino_name].activation_level() == lvl:
+                self.needed_dinos.add(dino_name)
+
+            # Check if the dinosaur is a hybrid
+            if input('Is ' + dino_name + ' a hybrid? (Type \'Y\' if so): ') == 'Y':
+                print()
+                first = input('Type the first parent of ' + dino_name + ': ')
+                second = input('Type the second parent of ' + dino_name + ': ')
 
             # If parents exist for the current dinosaur, check them as well
             if first: self.get_dino_info(first)
