@@ -134,8 +134,17 @@ class Dino:
     # def getRarity(self):
     #     return self.rarity
     
-    # def activationLvl(self):
-    #     return 5*self.rarityRank()
+    def activation_level(self):
+        """
+        Returns the level the dinosaur is at before it is unlocked (one below the first level)
+        For instance, for a Unique dinosaur, the activation level is 20
+
+        Returns
+        -------
+        int
+            The prequisite level
+        """
+        return 5*self.rarity_rank()
     
     def activation_amount(self) -> int:
         """

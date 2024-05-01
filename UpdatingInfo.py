@@ -94,6 +94,9 @@ class UpdatingInfo:
                 os.system('cls')
                 amount = input('Enter the correct amount for ' + actual_name + '.\nAmount: ')
 
+                if actual_name in needed_dinos and lvl > self.current_dinos[actual_name].activation_level():
+                    needed_dinos.remove(actual_name)
+
                 sorted_dinos.remove(actual_name)
                 self.current_dinos[actual_name].set_level(lvl)
                 self.current_dinos[actual_name].set_amount(amount)
