@@ -1,5 +1,7 @@
 Acrocanthops: Arctops Acrocanthosaurus
 Aenocyonyx: DireWolf Thylaconyx
+Allodrigues: RodriguesSolitaire Alloraptor
+Alloraptor: Delta Allosaurus2
 Amargocephalus: Amargasaurus Euoplocephalus
 Andrewtodon: Andrewsarchus Glyptodon
 Andrewtops: Andrewtodon Arctops
@@ -32,16 +34,20 @@ Entelolania: Meiolania Entelomoth
 Entelomoth: Entelodon WoollyMammoth
 Geminideus: Geminititan Stegodeus
 Geminititan: Diplodocus Koolabourgiana
+Giganyx: Tryostronix Giganotosaurus
 Gigaspikasaur: Nodopatosaurus Amargasaurus
+Gryganyth: Giganyx Grypolyth
 Grypolyth: Gryposuchus Purrolyth
 Indolycan: Aenocyonyx Indoraptor2
-IndominusRex: TyrannosaurusRex Velociraptor
 IndominusRex2: TyrannosaurusRex2 Echo
+IndominusRex: TyrannosaurusRex Velociraptor
 Indonemys: IndominusRex Smilonemys
 Indoraptor2: IndominusRex2 Blue
 Koolabourgiana: Arambourgiania Koolasuchus2
 Lystrosavis: Lystrosuchus Argentavis
 Lystrosuchus: Lystrosaurus Einiasuchus
+Magnapyritor: Dimetrodon Pyrritator
+Magnaraptor: Magnapyritor Allodrigues
 Mammolania: Mammotherium Meiolania
 Mammotherium: Elasmotherium WoollyMammoth
 Megistocurus: Megistotherium Doedicurus
@@ -62,6 +68,7 @@ Pterovexus: Darwinopterus Monomimus
 Purrolyth: Lythronax Purussaurus2
 Pyrorixis: Pyrosuchus Ghost
 Pyrosuchus: Pyroraptor2 Sarcorixis
+Pyrritator: Pyroraptor Irritator
 Quetzorion: Tanycolagreus Pteraquetzal
 Rajakylosaurus: Rajasaurus Ankylosaurus
 SahPanthera: Pantherator Scutophicyon
@@ -82,6 +89,7 @@ Thylaconyx: Baryonyx2 MarsupialLion
 Thylacotator: MarsupialLion Suchotator
 ThylosIntrepidus: MorosIntrepidus Thylacotator
 Tragodistis: Amargocephalus Parasaurolophus
+Tryostronix: Baryonyx Postimetrodon
 Tsintamoth: WoollyMammoth Tsintaosaurus
 Tuoramoloch: Paramoloch Tuojiangosaurus
 Tyannolophosaur: TyrannosaurusRex2 Dilophosaurus2

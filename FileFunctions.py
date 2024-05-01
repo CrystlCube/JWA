@@ -45,9 +45,9 @@ def save_dino_info(current_dinos, needed_dinos) -> None:
     needed_dinos: set[str]
         A set of needed dinosaur names
     """
-    needed_dinos_output = '\n'.join(needed_dinos)
-    current_dinos_output = '\n'.join([current_dinos[dino].to_string() for dino in current_dinos])
-    recipe_output = '\n'.join([current_dinos[dino].parent_to_string() for dino in current_dinos if current_dinos[dino].is_hybrid()])
+    needed_dinos_output = '\n'.join(sorted(needed_dinos))
+    current_dinos_output = '\n'.join(sorted([current_dinos[dino].to_string() for dino in current_dinos]))
+    recipe_output = '\n'.join(sorted([current_dinos[dino].parent_to_string() for dino in current_dinos if current_dinos[dino].is_hybrid()]))
 
     dino_writer = open("DinosToGet.txt", "w")
     dino_writer.write(needed_dinos_output)

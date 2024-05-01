@@ -90,12 +90,12 @@ class UpdatingInfo:
                 os.system('cls')
                 actual_name = input('Enter the name of the dino that should be next.\nName: ')
                 os.system('cls')
-                lvl = input('Enter the correct level for ' + actual_name + '.\nLevel: ')
+                lvl = int(input('Enter the correct level for ' + actual_name + '.\nLevel: '))
                 os.system('cls')
-                amount = input('Enter the correct amount for ' + actual_name + '.\nAmount: ')
+                amount = int(input('Enter the correct amount for ' + actual_name + '.\nAmount: '))
 
-                if actual_name in needed_dinos and lvl > self.current_dinos[actual_name].activation_level():
-                    needed_dinos.remove(actual_name)
+                if actual_name in self.needed_dinos and lvl > self.current_dinos[actual_name].activation_level():
+                    self.needed_dinos.remove(actual_name)
 
                 sorted_dinos.remove(actual_name)
                 self.current_dinos[actual_name].set_level(lvl)
