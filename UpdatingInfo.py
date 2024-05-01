@@ -79,9 +79,9 @@ class UpdatingInfo:
                 sorted_dinos.pop()
             elif user_input == 'c': # Change
                 os.system('cls')
-                lvl = input('Enter the correct level for ' + current_name + '.\nLevel: ')
-                os.system('cls')
-                amount = input('Enter the correct amount for ' + current_name + '.\nAmount: ')
+                user_input = input('Enter the correct amount for ' + current_name + ', and the level if it has changed.\nAmount: ').split(' ')
+                amount = user_input[0]
+                lvl = current_dino.get_level() if len(user_input) == 1 else user_input[1]
 
                 sorted_dinos.pop()
                 self.current_dinos[current_name].set_level(lvl)
