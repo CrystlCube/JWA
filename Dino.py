@@ -84,8 +84,16 @@ class Dino:
         """
         return bool(self.first)
 
-    # def getName(self):
-    #     return self.name
+    def get_name(self) -> str:
+        """
+        Returns the name of the dino
+
+        Returns
+        -------
+        str
+            The name of the dino
+        """
+        return self.name
 
     def get_level(self) -> int:
         """
@@ -181,19 +189,55 @@ class Dino:
             return 5
         return 0
 
-    # def DNAforLvl(self, lvl):
-    #     diff = lvl - self.activationLvl()
-    #     if diff == 1:
-    #         return (self.rarityRank()+1)*50
-    #     if diff < 7:
-    #         return (50*diff)+50
-    #     if diff < 8:
-    #         return (100*diff)-300
-    #     if diff < 12:
-    #         return (250*diff)-1500
-    #     if diff < 16:
-    #         return (500*diff)-4500
-    #     return 10*self.DNAforLvl(lvl-10)
+    def DNA_for_one_lvl(self, lvl):
+        """
+        Returns the amount of DNA required at a given level to level up
+
+        Parameters
+        ----------
+        lvl : int
+            The hypothetical level the dinosaur is at 
+    
+        Returns
+        -------
+        int
+            The amount of DNA required to level up
+        """
+        
+        diff = lvl - self.activation_level()
+        if diff < 8:
+            return (50*diff)+50
+        if diff < 9:
+            return (100*diff)-300
+        if diff < 13:
+            return (250*diff)-1500
+        if diff < 17:
+            return (500*diff)-4500
+        return 10*self.DNA_for_one_lvl(lvl-10)
+    
+    def DNA_to_certain_level(self, final_level):
+        """
+        Returns the amount of DNA needed to get the dino to a certain level
+
+        Parameters
+        ----------
+        lvl : int
+            The level the dinosaur needs to get to
+    
+        Returns
+        -------
+        int
+            The amount of DNA required to reach the given level
+        """
+        total_amount = 0
+        level = self.lvl
+        while level < final_level:
+            total_amount += self.DNA_for_one_lvl(level)
+            level += 1
+        return total_amount
+    
+    def get_parents(self) -> list[str]:
+        return [self.first, self.second]
     
     # def toString(self, depth):
     #     indent = ''
@@ -231,3 +275,26 @@ class Dino:
             A string containing the dinosaur's name, level, amount of DNA, and its rarity
         """
         return self.name + ' ' + str(self.lvl) + ' ' + str(self.amount) + ' ' + self.rarity
+    
+# Leveling Up Costs (for DNA)
+# Taken in difference from activation level
+# 1: 100
+# 2: 150
+# 3: 200
+# 4: 250
+# 5: 300
+# 6: 350
+# 7: 400
+# 8: 500
+# 9: 750
+# 10: 1000
+# 11: 1250
+# 12: 1500
+# 13: 2000
+# 14: 2500
+# 15: 3000
+# 16: 3500
+# 17: 4000
+# 18: 5000?
+# 19: 7500?
+# 20: 10000
