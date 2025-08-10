@@ -68,7 +68,16 @@ class UnlockingInfo:
         return self.current_dinos, self.needed_dinos
 
 
-    def clear_dino(self, unlocked_dino):
+    def clear_dino(self, unlocked_dino: str) -> None:
+        """
+        Takes the name of a recently unlcoked dinosaur and clears it from the database if it is no longer used for any other dinosaur.
+        This process is then recursively repeated with any dinos that are part of the first dinosaur's tree
+
+        Parameters
+        ----------
+        unlocked_dino: str
+            The name of the recently unlocked dino
+        """
         has_other_child = False
         for dino_name in self.current_dinos:
             dino = self.current_dinos[dino_name]
