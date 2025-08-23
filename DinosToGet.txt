@@ -52,6 +52,7 @@ Lystrosavis
 Magnaraptor
 Mammolania
 Megalocevia
+Monkeydactyl
 Monolomoth
 Monolorhino
 MortemRex
@@ -69,18 +70,15 @@ Pyrorixis
 Quetzaljara
 Rajadorixis
 Rajadotholus
-Rebel
 Refrenantem
 SahPanthera
 Sarcomantarx
-Sarcosaurus
-Saurolyth
 Segnotherisaurus
 Skoonametrodon
 Skorpiostegotops
 Spinotops
 Testacornibus
+Titanotarkus
 Titanotor
 Trykovenator
 Tyrannodactylus
-TyrannosaurDoe

@@ -205,6 +205,8 @@ class Dino:
         """
         
         diff = lvl - self.activation_level()
+        if diff == 0:
+            return self.activation_amount()
         if diff < 8:
             return (50*diff)+50
         if diff < 9:
@@ -215,9 +217,9 @@ class Dino:
             return (500*diff)-4500
         return 10*self.DNA_for_one_lvl(lvl-10)
     
-    def DNA_to_certain_level(self, final_level):
+    def DNA_to_certain_level(self, start_level, final_level):
         """
-        Returns the amount of DNA needed to get the dino to a certain level
+        Returns the amount of DNA needed to get the dino to a certain level from a specified level
 
         Parameters
         ----------
@@ -230,7 +232,7 @@ class Dino:
             The amount of DNA required to reach the given level
         """
         total_amount = 0
-        level = self.lvl
+        level = start_level
         while level < final_level:
             total_amount += self.DNA_for_one_lvl(level)
             level += 1

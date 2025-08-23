@@ -65,6 +65,8 @@ Brunette 13 201 E
 Bumpy 15 9363 E
 Carbonemys 20 353 E
 Carbotoceratops 18 244 L
+Carnotarkus 16 19 L
+Carnotaurus 20 12295 R
 Ceramagnus 25 0 A
 Ceranosaurus 25 0 A
 Cerastegotops 25 0 A
@@ -200,6 +202,7 @@ Megistotherium 15 812 E
 Meiolania 11 7225 R
 Microraptor 15 1555 E
 Miragaia 15 101007 C
+Monkeydactyl 15 185 L
 Monolometrodon 20 125 L
 Monolomoth 25 0 A
 Monolophosaurus 15 4323 E
@@ -250,7 +253,9 @@ Pteranokyrie 25 60 A
 Pteraquetzal 20 65 L
 Pulmonoscorpius 11 7657 E
 Purrolyth 20 1966 R
+Purussaurus 10 14867 R
 Purussaurus2 10 45868 C
+Purutaurus 15 288 E
 Pyroraptor 15 7571 E
 Pyroraptor2 15 59 R
 Pyrorixis 20 199 U
@@ -323,6 +328,7 @@ ThylosIntrepidus 21 9 U
 Tiger 18 42 E
 Titanoboa 15 2860 E
 Titanosaurus 12 131 E
+Titanotarkus 20 0 U
 Titanotor 15 0 L
 Tragodistis 20 197 L
 Triceratops 20 11107 R
@@ -348,3 +354,4 @@ Utasinoraptor 20 334 L
 Velociraptor 20 170513 C
 WoollyMammoth 15 46 E
 WoollyRhino 20 53 E
+Wuerhosaurus 15 6642 R

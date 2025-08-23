@@ -33,6 +33,7 @@ Bajatonodon: Edmontoguanodon Bajadasaurus
 Becklolyth: Blonde Saurolyth
 Becklophosaurus: Brunette Ovilophosaurus
 Carbotoceratops: Carbonemys Nasutoceratops
+Carnotarkus: Wuerhosaurus Purutaurus
 Ceranosaurus: Rebel Skoonasaurus
 Cerastegotops: Skorpiostegotops Ceratosaurus
 Compsocaulus: Compsognathus Diplocaulus2
@@ -120,6 +121,7 @@ Poukandactylus: Poukaidei Tupandactylus
 Protonodon: Protoceratops Bajatonodon
 Pteraquetzal: Pteranodon Quetzalcoatlus
 Purrolyth: Lythronax Purussaurus2
+Purutaurus: Carnotaurus Purussaurus
 Pyrorixis: Pyrosuchus Ghost
 Pyrosuchus: Pyroraptor2 Sarcorixis
 Pyrritator: Pyroraptor Irritator
@@ -155,6 +157,7 @@ Testacornibus: Eucladoceros Carbotoceratops
 Thylaconyx: Baryonyx2 MarsupialLion
 Thylacotator: MarsupialLion Suchotator
 ThylosIntrepidus: MorosIntrepidus Thylacotator
+Titanotarkus: Titanotor Carnotarkus
 Titanotor: Titanosaurus Giganotosaurus
 Tragodistis: Amargocephalus Parasaurolophus
 Trykosaurus: TyrannosaurusRex Ankyntrosaurus
