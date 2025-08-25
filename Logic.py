@@ -35,15 +35,29 @@ class Logic:
         """
         self.current_dinos = c_dinos
         self.needed_dinos = n_dinos
-        self.new_dino_levels = {}
+        self.ancestors = self.get_all_ancestors()
 
         self.total_needed_DNA = self.determine_all_needed_DNA()
+
+    def get_all_ancestors(self):
+        ancestors = {}
+        for dino_name in self.needed_dinos:
+            ancestors[dino_name] = self.get_ancestors(dino_name)
+        return ancestors
+
+    def get_ancestors(self, dino_name):
+        dino = self.current_dinos[dino_name]
+        if dino.is_hybrid():
+            return self.get_ancestors(dino.first).union(self.get_ancestors(dino.second))
+        else:
+            return set([dino_name])
+
 
     def determine_all_needed_DNA(self):
         total_dict = defaultdict(lambda: 0)
         for dino_name in self.needed_dinos:
             dino = self.current_dinos[dino_name]
-            needed_DNA = self.get_total_DNA(dino_name, dino.activation_level(), 0)
+            needed_DNA = self.get_total_DNA(dino_name, dino.activation_level(), dino.activation_amount())
             for key in needed_DNA:
                 total_dict[key] += needed_DNA[key]
         return total_dict
@@ -70,18 +84,18 @@ class Logic:
         dino = self.current_dinos[dino_name]
         amount = added_amount - dino.get_amount()
         if dino.get_level() < needed_lvl:
-            amount += dino.DNA_to_certain_level(needed_lvl)
+            amount += dino.DNA_to_certain_level(dino.lvl, needed_lvl)
         if not dino.is_hybrid():
             return {dino_name: amount} if amount > 0 and dino.get_level() != dino.activation_level() else {}
         else:
             full_dict = defaultdict(lambda: 0)
             if amount > 0:
-                p1_amount = self.get_parent_amount(dino.first, dino, amount)
+                p1_amount = self.get_parent_amount(dino.first, dino_name, amount)
                 p1_results = self.get_total_DNA(dino.first, dino.activation_level(), p1_amount)
                 for key in p1_results:
                     full_dict[key] += p1_results[key]
 
-                p2_amount = self.get_parent_amount(dino.second, dino, amount)
+                p2_amount = self.get_parent_amount(dino.second, dino_name, amount)
                 p2_results = self.get_total_DNA(dino.second, dino.activation_level(), p2_amount)
                 for key in p2_results:
                     full_dict[key] += p2_results[key]
@@ -190,7 +204,7 @@ class Logic:
                 if dino.rarity_rank() == rarity_id:
                     max = 0
                     max_dino = ""
-                    for root in self.total_needed_DNA:
+                    for root in self.ancestors[dino_name]:
                         p = self.total_needed_DNA[root]
                         if p > max:
                             max = p
@@ -200,8 +214,21 @@ class Logic:
 
             for i in sorted(percentages, key = lambda x: percentages[x][1]):
                 output_string += i + ": " + percentages[i][0] + ", " + str(percentages[i][1]) + ", " + self.current_dinos[percentages[i][0]].rarity + "\n"
+
+        b = {}
+        c = defaultdict(lambda: [])
+        for needed_dino in percentages:
+            for anc in self.ancestors[needed_dino]:
+                if anc in b:
+                    c[needed_dino].append(b[anc][-1])
+                else:
+                    b[anc] = []
+                b[anc].append(needed_dino)
         
-        return output_string
+        for i in c:
+            print(i, c[i])
+        
+        #return output_string
     
     # def get_percentages(self) -> str:
     #     """
@@ -247,4 +274,4 @@ if __name__=='__main__':
     x = Logic(current_dinos, needed_dinos)
     print(x.get_tags())
     print(x.DNA_still_needed())
-    #print(x.get_percentages())
+    print(x.get_limiting_factors())

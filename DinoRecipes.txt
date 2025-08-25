@@ -158,6 +158,7 @@ Thylaconyx: Baryonyx2 MarsupialLion
 Thylacotator: MarsupialLion Suchotator
 ThylosIntrepidus: MorosIntrepidus Thylacotator
 Titanotarkus: Titanotor Carnotarkus
+Titanotholus: Titanotarkus Rajatholus
 Titanotor: Titanosaurus Giganotosaurus
 Tragodistis: Amargocephalus Parasaurolophus
 Trykosaurus: TyrannosaurusRex Ankyntrosaurus
