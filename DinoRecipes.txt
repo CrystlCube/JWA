@@ -31,7 +31,6 @@ Atrocimoloch: Tiger Paramoloch
 Atrocodistis: Red Tragodistis
 Bajatonodon: Edmontoguanodon Bajadasaurus
 Becklolyth: Blonde Saurolyth
-Becklophosaurus: Brunette Ovilophosaurus
 Carbotoceratops: Carbonemys Nasutoceratops
 Carnotarkus: Wuerhosaurus Purutaurus
 Ceranosaurus: Rebel Skoonasaurus
@@ -105,7 +104,6 @@ Monostegotops: Stegoceratops Monolophosaurus
 Nodopatosaurus: Apatosaurus Nodosaurus
 Nodopatotitan: Giraffatitan Nodopatosaurus
 Nominrex: Phorurex Nomingia
-Ovilophosaurus: Oviraptor Dilophosaurus
 Ovinnolophosaurus: Oviraptor2 Tyrannolophosaur
 Ovylenken: Oviraptor2 Grylenken
 Pantherator: PantheraBlytheae Thylacotator

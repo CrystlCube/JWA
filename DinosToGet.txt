@@ -16,7 +16,6 @@ Ardontognathus
 Atrocimoloch
 Atrocodistis
 Becklolyth
-Becklophosaurus
 Ceramagnus
 Ceranosaurus
 Cerastegotops
@@ -57,7 +56,6 @@ Monolomoth
 Monolorhino
 MortemRex
 Nominrex
-Nyctosaurus
 Ovinnolophosaurus
 Ovylenken
 Parasauthops

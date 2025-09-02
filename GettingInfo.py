@@ -10,40 +10,30 @@ class GettingInfo:
     Attributes
     ----------
     current_dinos : dict[str : Dino]
-        A mapping of dinosaur names to the corresponding Dino objects
+        A current collection of dinosaur names mapped to their corresponding Dino objects
     needed_dinos : set[str]
         A set of names of dinosaurs that need to be unlocked
-
-    Methods
-    -------
-    input_dinos()
-        Gets new dinosaur information from the user and saves it
-    get_dino_info()
-        Gets information from the user about the specified dinosaur
-    all_dino_info()
-        Returns the current and needed dinosaur information
     """
     
     def __init__(self, c_dinos: dict[str: Dino], n_dinos: set[str]) -> None:
         """
-        Initializes the GettingInfo class with the given current and needed dinos, then runs input_dinos()
+        Initializes class variables and runs the user input process
         
         Parameters
         ----------
-        c_dinos: dict[str: Dino]
-            A dictionary that stores keys as names of current dinosaurs, and the values as the corresponding Dino objects
-        n_dinos: set[str]
-            A set of needed dinosaur names
+        c_dinos : dict[str : Dino]
+            A current collection of dinosaur names mapped to their corresponding Dino objects
+        n_dinos : set[str]
+            A set of names of dinosaurs that need to be unlocked
         """
         self.current_dinos = c_dinos
         self.needed_dinos = n_dinos
 
-        self.input_dinos()
+        self.ask_for_dinos()
 
-    def input_dinos(self) -> None:
+    def ask_for_dinos(self) -> None:
         """
-        Prompts the user for input for dinos that need to be entered into the system
-        Checks each dino for parents and adds them to the database as well
+        Prompts the user for input for dinosaurs that need to be entered into the database and starts the input process
         """
         while True:
             wanted_input = input('What dinosaur would you like to get? (Type \'quit\' to quit): ')
@@ -58,7 +48,7 @@ class GettingInfo:
         """
         Given a dinosaur name, prompt the user for information about the dinosaur
         If the dinosaur already exists in the database, no questions are prompted
-        Ask if the dinosaur is a hybrid, and if so, ask for the parents names, then run the same function with those names
+        Ask if the dinosaur is a hybrid, and if so, call the functio recursively for the parent
 
         Parameters
         ----------
@@ -74,7 +64,7 @@ class GettingInfo:
 
             # Get needed dinosaur info
             os.system('cls')
-            lvl = input('What level is ' + dino_name + '? ')
+            level = input('What level is ' + dino_name + '? ')
             amount = input('How much DNA does ' + dino_name + ' have? ')
             rarity = input('What rarity is ' + dino_name + '? ')
 
@@ -87,22 +77,22 @@ class GettingInfo:
                 self.get_dino_info(second)
 
             # Put the information in the database
-            self.current_dinos[dino_name] = Dino([dino_name, lvl, amount, rarity, first, second])
+            self.current_dinos[dino_name] = Dino([dino_name, level, amount, rarity, first, second])
 
             # Check if the dinosaur isn't yet unlocked
-            if self.current_dinos[dino_name].activation_level() == lvl:
+            if self.current_dinos[dino_name].activation_level() == level:
                 self.needed_dinos.add(dino_name)
 
-    def all_dino_info(self) -> tuple[dict[str: Dino], set[str]]:
+    def get_all_dino_info(self) -> tuple[dict[str: Dino], set[str]]:
         """
         A getter for the current dinosaur information and the needed dinosaur information
 
         Returns
         -------
-        dict[str: Dino]
-            A dictionary that stores keys as names of current dinosaurs, and the values as the corresponding Dino objects
+        dict[str : Dino]
+            A current collection of dinosaur names mapped to their corresponding Dino objects
         set[str]
-            A set of needed dinosaur names
+            A set of names of dinosaurs that need to be unlocked
         """
         return self.current_dinos, self.needed_dinos
 
@@ -116,5 +106,5 @@ if __name__=='__main__':
     """
     current_dinos, needed_dinos = FileFunctions.create_dino_info()
     getting_info = GettingInfo(current_dinos, needed_dinos)
-    current_dinos, needed_dinos = getting_info.all_dino_info()
+    current_dinos, needed_dinos = getting_info.get_all_dino_info()
     FileFunctions.save_dino_info(current_dinos, needed_dinos)

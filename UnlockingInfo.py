@@ -4,46 +4,36 @@ import FileFunctions
 
 class UnlockingInfo:
     """
-    A class in charge of managing adding new dinosaurs and their parents
+    A class in charge of marking dinosaurs as unlocked and removing them and their parents from the database if no longer needed
     ...
 
     Attributes
     ----------
     current_dinos : dict[str : Dino]
-        A mapping of dinosaur names to the corresponding Dino objects
+        A current collection of dinosaur names mapped to their corresponding Dino objects
     needed_dinos : set[str]
         A set of names of dinosaurs that need to be unlocked
-
-    Methods
-    -------
-    input_dinos()
-        Gets new dinosaur information from the user and saves it
-    get_dino_info()
-        Gets information from the user about the specified dinosaur
-    all_dino_info()
-        Returns the current and needed dinosaur information
     """
     
     def __init__(self, c_dinos: dict[str: Dino], n_dinos: set[str]) -> None:
         """
-        Initializes the GettingInfo class with the given current and needed dinos, then runs input_dinos()
-        
+        Initializes class variables and runs the user input process
+
         Parameters
         ----------
-        c_dinos: dict[str: Dino]
-            A dictionary that stores keys as names of current dinosaurs, and the values as the corresponding Dino objects
-        n_dinos: set[str]
-            A set of needed dinosaur names
+        c_dinos : dict[str : Dino]
+            A current collection of dinosaur names mapped to their corresponding Dino objects
+        n_dinos : set[str]
+            A set of names of dinosaurs that need to be unlocked
         """
         self.current_dinos = c_dinos
         self.needed_dinos = n_dinos
 
-        self.get_input()
+        self.ask_for_unlocked()
 
-    def get_input(self) -> None:
+    def ask_for_unlocked(self) -> None:
         """
-        Prompts the user for input for dinos that have been unlocked
-        Checks each dino and its parents and clears them out if they are no longer needed
+        Prompts the user to input dinos that have been unlocked and starts the removal process
         """
         while True:
             wanted_input = input('What dinosaur have you unlocked? (Type \'quit\' to quit): ')
@@ -54,28 +44,14 @@ class UnlockingInfo:
             self.needed_dinos.remove(wanted_input)
             os.system('cls')
 
-    def all_dino_info(self) -> tuple[dict[str: Dino], set[str]]:
-        """
-        A getter for the current dinosaur information and the needed dinosaur information
-
-        Returns
-        -------
-        dict[str: Dino]
-            A dictionary that stores keys as names of current dinosaurs, and the values as the corresponding Dino objects
-        set[str]
-            A set of needed dinosaur names
-        """
-        return self.current_dinos, self.needed_dinos
-
-
     def clear_dino(self, unlocked_dino: str) -> None:
         """
-        Takes the name of a recently unlcoked dinosaur and clears it from the database if it is no longer used for any other dinosaur.
+        Takes the name of a recently unlocked dinosaur and clears it from the database if it is no longer used for any other dinosaur.
         This process is then recursively repeated with any dinos that are part of the first dinosaur's tree
 
         Parameters
         ----------
-        unlocked_dino: str
+        unlocked_dino : str
             The name of the recently unlocked dino
         """
         has_other_child = False
@@ -95,24 +71,28 @@ class UnlockingInfo:
                 self.clear_dino(first)
                 self.clear_dino(second)
 
+    def get_all_dino_info(self) -> tuple[dict[str: Dino], set[str]]:
+        """
+        A getter for the current dinosaur information and the needed dinosaur information
+
+        Returns
+        -------
+        dict[str : Dino]
+            A current collection of dinosaur names mapped to their corresponding Dino objects
+        set[str]
+            A set of names of dinosaurs that need to be unlocked
+        """
+        return self.current_dinos, self.needed_dinos
 
         
 if __name__=='__main__':
     """
     Executes the following steps
         1. Grabs dinosaur information from the database
-        2. Adds any additional dinosaur information using the GettingInfo class
-        3. Puts all compiled dinosaur information back in the database
+        2. Removes any unneeded dinosaur information using the UnlockingInfo class
+        3. Puts all updated dinosaur information back in the database
     """
     current_dinos, needed_dinos = FileFunctions.create_dino_info()
     unlocking_info = UnlockingInfo(current_dinos, needed_dinos)
-    current_dinos, needed_dinos = unlocking_info.all_dino_info()
+    current_dinos, needed_dinos = unlocking_info.get_all_dino_info()
     FileFunctions.save_dino_info(current_dinos, needed_dinos)
-
-
-
-    # Ideas
-    # Similar "enter or type quit to quit"
-    # For each dino, look at if it is a child to any other dino
-    # If it is, leave it alone
-    # But if it is not, get rid of its recipe and info and do the same for its children
