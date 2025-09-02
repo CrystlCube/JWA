@@ -2,6 +2,7 @@ from Dino import Dino
 import FileFunctions
 import math
 from collections import Counter, defaultdict
+from collections import Counter, defaultdict
 
 DNA_PER_FUSE = 20
 
@@ -43,6 +44,8 @@ class DNAAnalytics:
         self.updated_levels = self.get_default_levels()
         self.updated_amounts = self.get_default_amounts()
         self.ancestors = self.get_all_ancestors()
+        self.updated_levels = self.set_default_levels()
+        self.updated_amounts = self.set_default_amounts()
 
         self.total_needed_DNA = self.determine_all_needed_DNA()
 
