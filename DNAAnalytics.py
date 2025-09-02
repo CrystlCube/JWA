@@ -43,8 +43,6 @@ class DNAAnalytics:
         self.updated_levels = self.get_default_levels()
         self.updated_amounts = self.get_default_amounts()
         self.ancestors = self.get_all_ancestors()
-        self.updated_levels = self.set_default_levels()
-        self.updated_amounts = self.set_default_amounts()
 
         self.total_needed_DNA = self.determine_all_needed_DNA()
 
@@ -203,55 +201,6 @@ class DNAAnalytics:
             return self.get_ancestors(dino.first).union(self.get_ancestors(dino.second))
         else:
             return set([dino_name])
-
-
-    def determine_all_needed_DNA(self):
-        total_dict = defaultdict(lambda: 0)
-        for dino_name in self.needed_dinos:
-            dino = self.current_dinos[dino_name]
-            needed_DNA = self.get_total_DNA(dino_name, dino.activation_level(), dino.activation_amount())
-            for key in needed_DNA:
-                total_dict[key] += needed_DNA[key]
-        return total_dict
-    
-    def get_parent_amount(self, parent_name: str, child_name: str, child_amount: int):
-        child = self.current_dinos[child_name]
-        parent = self.current_dinos[parent_name]
-        p1_rank_diff = (child.rarity_rank()-parent.rarity_rank())
-        p1_cost_per_fuse = 10*(5 if p1_rank_diff%2 else 2)*10**int(p1_rank_diff/2)
-        return p1_cost_per_fuse*math.ceil(child_amount/DNA_PER_FUSE)
-           
-    def get_total_DNA(self, dino_name: str, needed_lvl: int, added_amount):
-        """
-        Returns the total DNA needed to get the specified dino to the indicated level
-        Parameters
-        ----------
-        dino : str
-            The name of the dinosaur for which you need the total DNA amount
-        needed_lvl : int
-            The level at which the dinosaur needs to be
-        added_amount : int
-            The additional DNA that will be needed for the dinosaur
-        """
-        dino = self.current_dinos[dino_name]
-        amount = added_amount - dino.get_amount()
-        if dino.get_level() < needed_lvl:
-            amount += dino.DNA_to_certain_level(dino.lvl, needed_lvl)
-        if not dino.is_hybrid():
-            return {dino_name: amount} if amount > 0 and dino.get_level() != dino.activation_level() else {}
-        else:
-            full_dict = defaultdict(lambda: 0)
-            if amount > 0:
-                p1_amount = self.get_parent_amount(dino.first, dino_name, amount)
-                p1_results = self.get_total_DNA(dino.first, dino.activation_level(), p1_amount)
-                for key in p1_results:
-                    full_dict[key] += p1_results[key]
-
-                p2_amount = self.get_parent_amount(dino.second, dino_name, amount)
-                p2_results = self.get_total_DNA(dino.second, dino.activation_level(), p2_amount)
-                for key in p2_results:
-                    full_dict[key] += p2_results[key]
-            return full_dict
             
     # RESULTS FUNCTIONS -------------------------------------------------------------------------
 
