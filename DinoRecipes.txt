@@ -30,6 +30,7 @@ Ardontosaurus: Argentinosaurus Secodontosaurus
 Atrocimoloch: Tiger Paramoloch
 Atrocodistis: Red Tragodistis
 Bajatonodon: Edmontoguanodon Bajadasaurus
+Baryothus: LeucisticBaryonyx Dreadnoughtus
 Becklolyth: Blonde Saurolyth
 Carbotoceratops: Carbonemys Nasutoceratops
 Carnotarkus: Wuerhosaurus Purutaurus

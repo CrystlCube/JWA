@@ -3,7 +3,6 @@ Alacranix
 Alankydactylus
 Ampelorex
 Andrewtops
-Angel
 AnkylosLux
 Antarctovenator
 Apatoceratops
@@ -15,6 +14,7 @@ Arctovasilas
 Ardontognathus
 Atrocimoloch
 Atrocodistis
+Baryothus
 Becklolyth
 Ceramagnus
 Ceranosaurus
@@ -46,6 +46,7 @@ Indochicyon
 Indolycan
 Indonemys
 Junior
+LeucisticBaryonyx
 Lystrosavis
 Magnaraptor
 Mammolania
