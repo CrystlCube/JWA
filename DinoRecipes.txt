@@ -41,13 +41,11 @@ Compsovenator: Compsoraptor Dracovenator
 Concakuisaurus: Concavenator Fukuisaurus
 Concatoloch: Concatosaurus Tuoramoloch
 Concatosaurus: Concakuisaurus Tenontosaurus
-Constrictoraptor: Panthera Dilophoboa
 Crichtomoloch: Crichtonsaurus Ankylomoloch
 Dakotacurus: Dakotanops Megistocurus
 Dakotanops: Gorgonops Dakotaraptor
 Deinomimus: Deinotops Monomimus
 Deinotops: Deinosuchus Arctops
-Dilophoboa: Titanoboa Dilophosaurus2
 Diloracheirus: Deinocheirus Diloranosaurus
 Diloranosaurus: Dilophosaurus Ouranosaurus
 Dilozorion: Diloracheirus Quetzorion

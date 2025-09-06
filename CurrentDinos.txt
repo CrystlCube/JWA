@@ -79,7 +79,6 @@ Concakuisaurus 20 195 L
 Concatoloch 25 0 A
 Concatosaurus 22 145 U
 Concavenator 15 6353 E
-Constrictoraptor 20 200 U
 Crichtomoloch 20 0 U
 Crichtonsaurus 20 111 R
 Dakotacurus 20 0 U
@@ -91,7 +90,6 @@ Deinonychus 15 4784 C
 Deinosuchus 10 297 R
 Deinotops 12 493 E
 Delta 15 19428 R
-Dilophoboa 20 130 L
 Dilophosaurus 15 7086 R
 Dilophosaurus2 15 48779 C
 Diloracheirus 22 169 U
@@ -223,7 +221,6 @@ Ovinnolophosaurus 20 100 U
 Oviraptor2 15 1000 E
 Ovylenken 20 0 U
 Pachycephalosaurus 15 987 E
-Panthera 20 144 E
 PantheraBlytheae 20 1695 L
 Pantherator 21 48 U
 Paramoloch 20 61 L
@@ -321,7 +318,6 @@ Thylacosmilus 11 223 R
 Thylacotator 20 10 E
 ThylosIntrepidus 21 9 U
 Tiger 18 42 E
-Titanoboa 15 3767 E
 Titanosaurus 15 33 E
 Titanotarkus 20 0 U
 Titanotholus 25 0 A

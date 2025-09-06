@@ -44,8 +44,6 @@ class DNAAnalytics:
         self.updated_levels = self.get_default_levels()
         self.updated_amounts = self.get_default_amounts()
         self.ancestors = self.get_all_ancestors()
-        self.updated_levels = self.set_default_levels()
-        self.updated_amounts = self.set_default_amounts()
 
         self.total_needed_DNA = self.determine_all_needed_DNA()
 
@@ -139,7 +137,7 @@ class DNAAnalytics:
         else:
             updated_amount -= needed_amount
             needed_amount = 0
-            return {}
+            return {dino_name: 0}
 
         # Translate the DNA amounts to parent amounts if applicable
         if dino.is_hybrid():
@@ -149,7 +147,7 @@ class DNAAnalytics:
             p2_amount = self.calculate_parent_amount(dino.second, dino_name, needed_amount)
             p2_results = self.get_needed_DNA(dino.second, dino.activation_level(), p2_amount)
 
-            return dict(Counter(p1_results) + Counter(p2_results))
+            return Counter(p1_results) + Counter(p2_results)
         else:
             return {dino_name: needed_amount}
         
@@ -167,7 +165,7 @@ class DNAAnalytics:
             dino = self.current_dinos[dino_name]
             needed_DNA = self.get_needed_DNA(dino_name, dino.activation_level(), dino.activation_amount())
             total_DNA_count += Counter(needed_DNA)
-        return dict(total_DNA_count)
+        return total_DNA_count
             
     # ANCESTOR FUNCTIONS ------------------------------------------------------------------------
 
