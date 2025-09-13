@@ -1,4 +1,5 @@
 from Dino import Dino
+from HistoryPlotting import HistoryPlotting
 import FileFunctions
 import math
 from collections import Counter, defaultdict
@@ -22,6 +23,8 @@ class DNAAnalytics:
         A mapping of dinosaur names to an amount; used for one dinosaur being used for multiple descendants
     ancestors : dict[str : set[str]]
         A mapping of each needed dinosaur to a set of its ancestors
+    history : HistoryPlotting
+        A class instantiation to keep track of amount history
     tags : dict[str : str]
         A mapping of dinosaur names to their tag color
     total_needed_DNA : dict[str : int]
@@ -44,6 +47,7 @@ class DNAAnalytics:
         self.updated_levels = self.get_default_levels()
         self.updated_amounts = self.get_default_amounts()
         self.ancestors = self.get_all_ancestors()
+        self.history = HistoryPlotting()
 
         self.total_needed_DNA = self.determine_all_needed_DNA()
 
@@ -329,7 +333,36 @@ class DNAAnalytics:
             print(i, c[i])
         
         #return output_string
-    
+    def update_amount_history(self) -> None:
+        """
+        Send an update of current amounts to the HistoryPlotting class instance
+        """
+        current_amounts = {name: self.current_dinos[name].get_amount() for name in self.current_dinos}
+        self.history.send_amount_update(current_amounts)
+
+    def select_dinos_for_display(self):
+        """
+        Determine which dinosaurs to display the account history for and display it via the HistoryPlotting instance
+        """
+        print("Here are the options for which dinosaurs you can display amount history for:")
+        print("1: A single dinosaur")
+        print("2: The ancestors of a single dinosaur")
+        print("3. All dinosaurs of a certain rarity")
+        user_input = int(input("Select the option you'd like by typing the number (i.e. 2): "))
+        if user_input == 1:
+            dino_name = input("Enter the dinosaur name you'd like the history for: ")
+            self.history.display_amount_history(set([dino_name]))
+        elif user_input == 2:
+            dino_name = input("Enter the descendant dinosaur name you'd like the ancestors' history for: ")
+            self.history.display_amount_history(self.ancestors[dino_name])
+        elif user_input == 3:
+            rarity = input("Enter the rarity that you'd like to see all the dinosaur amount history for: ")
+            dinos_with_rarity = set()
+            for dino_name in self.total_needed_DNA:
+                if self.current_dinos[dino_name].get_rarity() == rarity:
+                    dinos_with_rarity.add(dino_name)
+            self.history.display_amount_history(dinos_with_rarity)
+
     # def get_percentages(self) -> str:
     #     """
     #     TODO
@@ -378,6 +411,8 @@ if __name__=='__main__':
         print("1: Get all the dinosaurs that should have orange tags")
         print("2: Get all the DNA still needed to get every needed dinosaur, sorted by rarity")
         print("3. Get the most needed dinosaur for each needed dinosaur")
+        print("4. Save your current dino amounts to the historical database")
+        print("5. Display a history of DNA amounts")
         user_input = int(input("Select the option you'd like by typing the number (i.e. 2): "))
         if user_input == 0:
             break
@@ -387,6 +422,10 @@ if __name__=='__main__':
             print(x.print_DNA_still_needed())
         elif user_input == 3:
             print(x.print_limiting_factors())
+        elif user_input == 4:
+            x.update_amount_history()
+        elif user_input == 5:
+            x.select_dinos_for_display()
         print()
         print("If you're interested in running something else, simply type it again. Otherwise, type 0 to quit the program.")
  

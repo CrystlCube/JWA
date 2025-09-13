@@ -139,8 +139,8 @@ class Dino:
         """
         self.amount = amount
 
-    # def getRarity(self):
-    #     return self.rarity
+    def get_rarity(self):
+        return self.rarity
     
     def activation_level(self):
         """
