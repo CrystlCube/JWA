@@ -335,10 +335,9 @@ class DNAAnalytics:
         #return output_string
     def update_amount_history(self) -> None:
         """
-        Send an update of current amounts to the HistoryPlotting class instance
+        Send an update of needed amounts to the HistoryPlotting class instance
         """
-        current_amounts = {name: self.current_dinos[name].get_amount() for name in self.current_dinos}
-        self.history.send_amount_update(current_amounts)
+        self.history.send_amount_update(self.total_needed_DNA)
 
     def select_dinos_for_display(self):
         """

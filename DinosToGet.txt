@@ -14,7 +14,7 @@ Arctovasilas
 Ardontognathus
 Atrocimoloch
 Atrocodistis
-Baryothus
+Becklerizaurus
 Becklolyth
 Ceramagnus
 Ceranosaurus
@@ -53,7 +53,6 @@ Mammolania
 Megalocevia
 Monkeydactyl
 Monolomoth
-Monolorhino
 MortemRex
 Nominrex
 Ovinnolophosaurus

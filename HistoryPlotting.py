@@ -32,6 +32,7 @@ class HistoryPlotting:
             amount_changed = {name: False for name in all_dino_names}
             for i in range(1,len(amounts)):
                 dino_name, amount = amounts[i].split(': ')
+                amount = int(amount)
                 if dino_name not in all_dino_names:
                     all_dino_names.add(dino_name)
                     self.amount_history[dino_name] = [amount]
@@ -43,29 +44,29 @@ class HistoryPlotting:
                     self.amount_history[dino_name].append(self.amount_history[dino_name][-1])
                     amount_changed[dino_name] = True
    
-    def send_amount_update(self, current_amounts: dict[str : int]) -> None:
+    def send_amount_update(self, needed_amounts: dict[str : int]) -> None:
         """
         Takes new dinosaur amounts and adds them to amount_history and AmountHistory.txt
 
         Parameters
         ----------
-        current_amounts: dict[str : int]
-            A mapping of dinosaur names to their new current amounts
+        needed_amounts: dict[str : int]
+            A mapping of dinosaur names to their new needed amounts
         """
         formatted_date = datetime.datetime.now().strftime("%m/%d/%Y")
         self.dates.append(formatted_date)
 
-        amount_writer = open("AmountHistory.txt", "w") # TODO Do something to make sure it adds to current text
+        amount_writer = open("AmountHistory.txt", "a")
         amount_writer.write('\n')
         amount_writer.write('\n' + formatted_date)
-        for dino_name in sorted(current_amounts):
-            if dino_name not in self.amount_history or current_amounts[dino_name] != self.amount_history[dino_name][-1]:
-                amount_writer.write('\n' + dino_name + ": " + str(current_amounts[dino_name]))
+        for dino_name in sorted(needed_amounts):
+            if dino_name not in self.amount_history or needed_amounts[dino_name] != self.amount_history[dino_name][-1]:
+                amount_writer.write('\n' + dino_name + ": " + str(needed_amounts[dino_name]))
 
-        for dino_name in current_amounts:
+        for dino_name in needed_amounts:
             if dino_name not in self.amount_history:
                 self.amount_history[dino_name] = []
-            self.amount_history[dino_name].append(current_amounts[dino_name])
+            self.amount_history[dino_name].append(needed_amounts[dino_name])
 
     def display_amount_history(self, dinos_to_display: set[str]) -> None:
         """
@@ -77,10 +78,12 @@ class HistoryPlotting:
             A set of dinosaur names that we should display that data for
         """
         for dino_name in dinos_to_display:
+            if dino_name not in self.amount_history: continue
             x_axis = self.dates
             y_axis = [int(i) for i in self.amount_history[dino_name]]
             len_of_history = len(self.amount_history[dino_name])
             if len(self.amount_history[dino_name]) != len(self.dates):
                 x_axis = self.dates[-len_of_history:]
             plt.plot(x_axis,y_axis,label=dino_name)
+        plt.legend()
         plt.show()
