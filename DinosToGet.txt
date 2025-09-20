@@ -14,8 +14,8 @@ Arctovasilas
 Ardontognathus
 Atrocimoloch
 Atrocodistis
+Becklejara
 Becklerizaurus
-Becklolyth
 Ceramagnus
 Ceranosaurus
 Cerastegotops
@@ -46,7 +46,6 @@ Indochicyon
 Indolycan
 Indonemys
 Junior
-LeucisticBaryonyx
 Lystrosavis
 Magnaraptor
 Mammolania

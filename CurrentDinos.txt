@@ -56,6 +56,7 @@ Bajadasaurus 15 35 R
 Bajatonodon 17 80 L
 Baryonyx 15 4048 E
 Baryonyx2 15 7295 R
+Becklejara 25 0 A
 Becklerizaurus 25 0 A
 Becklolyth 15 100 L
 Becklophosaurus 16 17 L
@@ -183,7 +184,6 @@ Kentrosaurus 15 3274 E
 Koolabourgiana 16 25 L
 Koolasuchus 15 1452 E
 Koolasuchus2 15 6124 R
-LeucisticBaryonyx 5 0 R
 Lystrosaurus 15 3030 E
 Lystrosavis 20 97 U
 Lystrosuchus 20 10 L
