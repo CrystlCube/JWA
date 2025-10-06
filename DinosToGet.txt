@@ -9,6 +9,7 @@ Apatoceratops
 Aquicomilus
 Aquilosaurus
 Aquilotae
+Aquisaurus
 Arctocanis
 Arctovasilas
 Ardontognathus
@@ -30,9 +31,9 @@ Dilozorion
 DistortusRex
 DracoIntrepidus
 DracoLux
-Dsungascorpios
 Entelolania
 Eremocanis
+Estemmenosuchus
 Geminideus
 Glyptosavis
 Gorgotrebax
@@ -46,7 +47,6 @@ Indochicyon
 Indolycan
 Indonemys
 Junior
-Lystrosavis
 Magnaraptor
 Mammolania
 Megalocevia

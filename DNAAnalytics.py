@@ -126,20 +126,22 @@ class DNAAnalytics:
             A mapping of dinosaur names to the total DNA needed to get the specified dinosaur to the indicated level
         """
         dino = self.current_dinos[dino_name]
+        # if dino_name == 'Velociraptor':
+        #     pass
 
         # Account for the DNA required to get the specified level
         updated_level = self.updated_levels[dino_name]
         if updated_level < needed_level:
             needed_amount += dino.DNA_to_certain_level(updated_level, needed_level)
-            self.updated_levels[dino] = needed_level
+            self.updated_levels[dino_name] = needed_level
         
         # Account for the DNA that the dinosaur already has
         updated_amount = self.updated_amounts[dino_name]
         if updated_amount < needed_amount:
             needed_amount -= updated_amount
-            updated_amount = 0
+            self.updated_amounts[dino_name] = 0
         else:
-            updated_amount -= needed_amount
+            self.updated_amounts[dino_name] -= needed_amount
             needed_amount = 0
             return {dino_name: 0}
 
@@ -167,7 +169,7 @@ class DNAAnalytics:
         total_DNA_count = Counter()
         for dino_name in self.needed_dinos:
             dino = self.current_dinos[dino_name]
-            needed_DNA = self.get_needed_DNA(dino_name, dino.activation_level(), dino.activation_amount())
+            needed_DNA = self.get_needed_DNA(dino_name, dino.activation_level()+1, 0)
             total_DNA_count += Counter(needed_DNA)
         return total_DNA_count
             
@@ -329,7 +331,10 @@ class DNAAnalytics:
                     b[anc] = []
                 b[anc].append(needed_dino)
         
-        for i in c:
+        for i in sorted(b):
+            print(i, b[i])
+        print()
+        for i in sorted(c):
             print(i, c[i])
         
         #return output_string

@@ -22,6 +22,7 @@ Aquicomilus: Aquilamimus Thylacosmilus
 Aquilamimus: Gallimimus HasstEagle2
 Aquilosaurus: Aquicomilus Pachycephalosaurus
 Aquilotae: Aquilosaurus PantheraBlytheae
+Aquisaurus: Aquilops Lystrosaurus
 Arctalces: Arctodus Cervalces
 Arctocanis: Ailurarctos ArmbrustersWolf
 Arctovasilas: Arctalces Testacornibus
@@ -59,8 +60,6 @@ DracoIntrepidus: Dracoceratops ThylosIntrepidus
 DracoLux: Utarinex StyracosaurusLux
 Dracoceratops: Dracorex2 Triceratops2
 Dreadactylus: Preondactylus Dreadnoughtus
-Dsungaia: Miragaia Dsungaripterus
-Dsungascorpios: Pulmonoscorpius Dsungaia
 Edaphocevia: Inostrancevia Edaphosaurus
 Edmontoguanodon: Edmontosaurus Iguanodon
 Einiasuchus: Einiosaurus Nundasuchus
@@ -88,8 +87,6 @@ Indoraptor2: IndominusRex2 Blue
 Indoraptor: IndominusRex Velociraptor
 Junior: TyrannosaurDoe TyrannosaurBuck
 Koolabourgiana: Arambourgiania Koolasuchus2
-Lystrosavis: Lystrosuchus Argentavis
-Lystrosuchus: Lystrosaurus Einiasuchus
 Magnapyritor: Dimetrodon Pyrritator
 Magnaraptor: Magnapyritor Allodrigues
 Mammolania: Mammotherium Meiolania

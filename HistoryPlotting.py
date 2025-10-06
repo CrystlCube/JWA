@@ -33,6 +33,7 @@ class HistoryPlotting:
             for i in range(1,len(amounts)):
                 dino_name, amount = amounts[i].split(': ')
                 amount = int(amount)
+                if dino_name[0] == '#': continue
                 if dino_name not in all_dino_names:
                     all_dino_names.add(dino_name)
                     self.amount_history[dino_name] = [amount]
@@ -43,6 +44,21 @@ class HistoryPlotting:
                 if not amount_changed[dino_name]:
                     self.amount_history[dino_name].append(self.amount_history[dino_name][-1])
                     amount_changed[dino_name] = True
+
+    def archive_dino(self, dino_name: str) -> None:
+        """
+        Takes in a dinosaur name and comments out all of its amount history
+
+        Parameters
+        ----------
+        dino_name: str
+            Name of the dinosaur to archive
+        """
+        f = open("AmountHistory.txt", "r")
+        original = f.read()
+        changed = original.replace(dino_name + ":", "# " + dino_name + ":")
+        f = open("AmountHistory.txt", "w")
+        f.write(changed)
    
     def send_amount_update(self, needed_amounts: dict[str : int]) -> None:
         """

@@ -1,5 +1,6 @@
 import os
 from Dino import Dino
+from HistoryPlotting import HistoryPlotting
 import FileFunctions
 
 class UnlockingInfo:
@@ -25,9 +26,12 @@ class UnlockingInfo:
             A current collection of dinosaur names mapped to their corresponding Dino objects
         n_dinos : set[str]
             A set of names of dinosaurs that need to be unlocked
+        history : HistoryPlotting
+            A class instantiation to keep track of amount history
         """
         self.current_dinos = c_dinos
         self.needed_dinos = n_dinos
+        self.history = HistoryPlotting()
 
         self.ask_for_unlocked()
 
@@ -62,6 +66,7 @@ class UnlockingInfo:
                     has_other_child = True
         
         if not has_other_child:
+            self.history.archive_dino(unlocked_dino)
             first = None
             if self.current_dinos[unlocked_dino].is_hybrid():
                 first, second = self.current_dinos[unlocked_dino].get_parents()
