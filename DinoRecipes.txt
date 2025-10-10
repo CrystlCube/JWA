@@ -1,4 +1,3 @@
-Acrocanthops: Arctops Acrocanthosaurus
 Aenocyonyx: DireWolf Thylaconyx
 Alankydactylus: Dreadactylus Alankyloceratops
 Alankyloceratops: Alankylosaurus Triceratops
@@ -94,6 +93,7 @@ Mammotherium: Elasmotherium WoollyMammoth
 Megalocevia: Megalosuchus Albertocevia
 Megalosuchus: Gorgosuchus Megalosaurus
 Megistocurus: Megistotherium Doedicurus
+Monkeyondactylus: Monkeydactyl Ankylodactylus
 Monolometrodon: Dimetrodon2 Monolophosaurus2
 Monolomoth: Monolorhino Tsintamoth
 Monolorhino: WoollyRhino Monolometrodon
@@ -107,14 +107,11 @@ Ovinnolophosaurus: Oviraptor2 Tyrannolophosaur
 Ovylenken: Oviraptor2 Grylenken
 Pantherator: PantheraBlytheae Thylacotator
 Paramoloch: Parasaurolophus Stygimoloch
-Parasauthops: Acrocanthops ParasaurolophusLux
 Phorurex: Phorusaura Dracorex2
 Phorusaura: Phorusrhacos Maiasaura
 Plateopikasaurus: Plateosaurus Gigaspikasaur
 Plateorex: Plateopikasaurus Tenontorex
 Postimetrodon: Postosuchus Dimetrodon
-Poukaidei: HaastEagle Deinonychus
-Poukandactylus: Poukaidei Tupandactylus
 Protonodon: Protoceratops Bajatonodon
 Pteraquetzal: Pteranodon Quetzalcoatlus
 Purrolyth: Lythronax Purussaurus2

@@ -1,5 +1,5 @@
 08/31/2025
-Acrocanthosaurus: 366
+# Acrocanthosaurus: 366
 Ailurarctos: 18516
 Alacranix: 280
 Alanqa: 2171
@@ -37,7 +37,7 @@ Concavenator: 10146
 Crichtonsaurus: 2961
 Dakotaraptor: 835
 Deinocheirus: 4585
-Deinonychus: 5203
+# Deinonychus: 5203
 Deinosuchus: 10969
 Delta: 16780
 Dilophosaurus: 22206
@@ -72,7 +72,7 @@ Gorgosaurus: 28753
 Gorgotrebax: 260
 Graciliraptor: 29
 Gryposuchus: 16174
-HaastEagle: 1105
+# HaastEagle: 1105
 HaastMaximus: 200
 HadrosLux: 255
 HasstEagle2: 20835
@@ -183,7 +183,7 @@ Ceramagnus: 250
 Compsognathus2: 36754
 Concavenator: 9848
 Crichtonsaurus: 2560
-Deinonychus: 2703
+# Deinonychus: 2703
 Deinosuchus: 9531
 Delta: 16479
 Dilophosaurus: 51414
@@ -200,7 +200,7 @@ Giganotosaurus: 19946
 Glyptodon: 156460
 Gorgonops: 385
 Gorgosaurus: 28619
-HaastEagle: 621
+# HaastEagle: 621
 HasstEagle2: 19075
 LeucisticBaryonyx: 100
 MarsupialLion: 64629
