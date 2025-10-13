@@ -29,6 +29,7 @@ Ardontognathus: Anurognathus Ardontosaurus
 Ardontosaurus: Argentinosaurus Secodontosaurus
 Atrocimoloch: Tiger Paramoloch
 Atrocodistis: Red Tragodistis
+Atromolistis: Atrocodistis Atrocimoloch
 Bajatonodon: Edmontoguanodon Bajadasaurus
 Becklejara: Becklolyth Quetzaljara
 Becklerizaurus: Becklophosaurus Segnotherisaurus
