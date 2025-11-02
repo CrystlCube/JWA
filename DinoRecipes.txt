@@ -21,6 +21,7 @@ Aquicomilus: Aquilamimus Thylacosmilus
 Aquilamimus: Gallimimus HasstEagle2
 Aquilosaurus: Aquicomilus Pachycephalosaurus
 Aquilotae: Aquilosaurus PantheraBlytheae
+Aquiraptor: Aquisaurus Graciliraptor
 Aquisaurus: Aquilops Lystrosaurus
 Arctalces: Arctodus Cervalces
 Arctocanis: Ailurarctos ArmbrustersWolf
@@ -113,6 +114,7 @@ Phorusaura: Phorusrhacos Maiasaura
 Plateopikasaurus: Plateosaurus Gigaspikasaur
 Plateorex: Plateopikasaurus Tenontorex
 Postimetrodon: Postosuchus Dimetrodon
+ProtoLux: Protonodon Crichtomoloch
 Protonodon: Protoceratops Bajatonodon
 Pteraquetzal: Pteranodon Quetzalcoatlus
 Purrolyth: Lythronax Purussaurus2

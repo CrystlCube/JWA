@@ -9,6 +9,7 @@ Apatoceratops
 Aquicomilus
 Aquilosaurus
 Aquilotae
+Aquiraptor
 Aquisaurus
 Arctocanis
 Arctovasilas
@@ -23,7 +24,6 @@ Cerastegotops
 Compsocaulus
 Compsovenator
 Concatoloch
-Crichtomoloch
 Dakotacurus
 Deinomimus
 Dilozorion
@@ -36,7 +36,6 @@ Estemmenosuchus
 Geminideus
 Glyptosavis
 Gorgotrebax
-Graciliraptor
 Gryganyth
 HaastMaximus
 HadrosLux
@@ -53,17 +52,18 @@ Monkeydactyl
 Monkeyondactylus
 Monolomoth
 MortemRex
+Mutadon
 Nominrex
 Ovinnolophosaurus
 Ovylenken
 Plateopikasaurus
 Plateorex
+ProtoLux
 Protonodon
 Pteranokyrie
 Pyrorixis
 Rajadorixis
 Rajadotholus
-Refrenantem
 SahPanthera
 Sarcomantarx
 Segnotherisaurus

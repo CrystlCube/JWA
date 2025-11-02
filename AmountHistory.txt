@@ -34,7 +34,7 @@ Cervalces: 46129
 Compsognathus: 2564
 Compsognathus2: 37044
 Concavenator: 10146
-Crichtonsaurus: 2961
+# Crichtonsaurus: 2961
 Dakotaraptor: 835
 Deinocheirus: 4585
 # Deinonychus: 5203
@@ -70,7 +70,7 @@ Glyptodon: 157048
 Gorgonops: 2020
 Gorgosaurus: 28753
 Gorgotrebax: 260
-Graciliraptor: 29
+# Graciliraptor: 29
 Gryposuchus: 16174
 # HaastEagle: 1105
 HaastMaximus: 200
@@ -120,7 +120,7 @@ Quetzalcoatlus: 33604
 Rajasaurus: 23278
 Rebel: 5705
 Red: 2078
-Refrenantem: 230
+# Refrenantem: 230
 Rexy: 2818
 Rinchenia: 12432
 RodriguesSolitaire: 23178
@@ -182,7 +182,7 @@ Carnotaurus: 16305
 Ceramagnus: 250
 Compsognathus2: 36754
 Concavenator: 9848
-Crichtonsaurus: 2560
+# Crichtonsaurus: 2560
 # Deinonychus: 2703
 Deinosuchus: 9531
 Delta: 16479
@@ -356,7 +356,7 @@ Carnotaurus: 14679
 Ceramagnus: 200
 Compsognathus2: 35424
 Concavenator: 15642
-Crichtonsaurus: 1809
+# Crichtonsaurus: 1809
 Deinocheirus: 2535
 Deinosuchus: 8162
 Delta: 9149
@@ -385,7 +385,7 @@ Giganotosaurus: 22021
 Gigantspinosaurus: 12796
 Glyptodon: 149605
 Gorgosaurus: 27537
-Graciliraptor: 7
+# Graciliraptor: 7
 Gryposuchus: 15580
 HaastMaximus: 150
 HadrosLux: 205
@@ -431,7 +431,7 @@ Quetzalcoatlus: 71780
 Rajasaurus: 28513
 Rebel: 5625
 Red: 16394
-Refrenantem: 80
+# Refrenantem: 80
 Rexy: 2796
 Rinchenia: 12167
 RodriguesSolitaire: 16980
@@ -469,3 +469,107 @@ Velociraptor: 152550
 WoollyMammoth: 18881
 WoollyRhino: 13971
 Wuerhosaurus: 33432
+
+10/26/2025
+Alanqa: 1480
+Amargasaurus: 47500
+Ampelosaurus: 3427
+Angel: 5937
+Animantarx: 2419
+Ankylosaurus: 13518
+Ankylosaurus2: 15965
+Antarctopelta: 20521
+Apatosaurus: 137123
+Aquilops: 16382
+Arambourgiania: 5829
+Arctops: 18690
+Argentinosaurus: 3691
+Bajadasaurus: 7265
+Baryonyx2: 35593
+Blonde: 12425
+Blue: 3039
+Bumpy: 3355
+Carbonemys: 23028
+Carnotaurus: 14729
+Ceramagnus: 150
+Compsognathus2: 34758
+Concavenator: 14875
+# Crichtonsaurus: 1467
+Deinosuchus: 7662
+Delta: 8578
+Dilophosaurus: 55315
+Dilophosaurus2: 11263
+Diplocaulus2: 66355
+Diplodocus: 10698
+DireWolf: 37934
+Doedicurus: 15498
+Dracorex: 28385
+Dracorex2: 166449
+Echo: 26321
+Elasmotherium: 5014
+Eremotherium: 78967
+Fukuisaurus: 22882
+Gallimimus: 43066
+Ghost: 15091
+Giganotosaurus: 22171
+Gigantspinosaurus: 12539
+Glyptodon: 146605
+Graciliraptor: 1332
+HaastMaximus: 100
+HasstEagle2: 8305
+Irritator: 28076
+Irritator2: 52097
+Koolasuchus: 10893
+Koolasuchus2: 34168
+Lystrosaurus: 1945
+Lythronax: 108124
+MarsupialLion: 95519
+Meiolania: 11338
+Microraptor: 10011
+Monolophosaurus: 8710
+Monolophosaurus2: 37821
+MorosIntrepidus: 10507
+Mutadon: 175
+Nasutoceratops: 48343
+Nodosaurus: 53204
+Ouranosaurus: 4157
+PantheraBlytheae: 5476
+Parasaurolophus: 192180
+Phorusrhacos: 31084
+Postosuchus: 47183
+Preondactylus: 71985
+Pteranodon: 16223
+Purussaurus: 5387
+Purussaurus2: 110141
+Pyroraptor2: 38560
+Quetzalcoatlus: 71587
+Rajasaurus: 28463
+Rebel: 5585
+Red: 16358
+Rinchenia: 12017
+RodriguesSolitaire: 16072
+Sarcosuchus: 19136
+Saurornitholestes: 137848
+Scelidosaurus: 3466
+Scolosaurus: 77313
+Scutosaurus: 12131
+Skorpiovenator: 44057
+Sonorasaurus: 19435
+Sphaerotholus: 90365
+Spinosaurus2: 6529
+Stegoceras: 10759
+Stegosaurus: 100777
+Suchomimus: 55635
+Tanycolagreus: 87598
+Tapejara: 27409
+Tenontosaurus: 57959
+Therizinosaurus: 27354
+Thylacosmilus: 50556
+Tiger: 13847
+Triceratops: 48751
+Tuojiangosaurus: 59930
+Tupandactylus: 28135
+TyrannosaurusRex2: 43413
+Velociraptor: 152371
+WoollyMammoth: 17916
+Wuerhosaurus: 32904
