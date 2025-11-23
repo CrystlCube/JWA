@@ -1,4 +1,5 @@
 Aenocyonyx: DireWolf Thylaconyx
+Aerospinosaurus: RebirthSpinosaurus Aerotitan
 Alankydactylus: Dreadactylus Alankyloceratops
 Alankyloceratops: Alankylosaurus Triceratops
 Alankylosaurus: Alanqa Ankylosaurus2
@@ -68,6 +69,8 @@ Entelolania: Meiolania Entelomoth
 Entelomoth: Entelodon WoollyMammoth
 Eremocanis: Eremoceros Arctocanis
 Eremoceros: Eremotherium Eucladoceros
+Fukuimimus: Fukuisaurus Struthiomimus
+Fukuitops: Fukuimimus Deinomimus
 Geminideus: Geminititan Stegodeus
 Geminititan: Diplodocus Koolabourgiana
 Giganspinoceratops: Gigantspinosaurus Spinoceratops
@@ -86,7 +89,6 @@ IndominusRex: TyrannosaurusRex Velociraptor
 Indonemys: IndominusRex Smilonemys
 Indoraptor2: IndominusRex2 Blue
 Indoraptor: IndominusRex Velociraptor
-Junior: TyrannosaurDoe TyrannosaurBuck
 Koolabourgiana: Arambourgiania Koolasuchus2
 Magnapyritor: Dimetrodon Pyrritator
 Magnaraptor: Magnapyritor Allodrigues

@@ -1,4 +1,4 @@
-Aenocyonyx
+Aerospinosaurus
 Alacranix
 Alankydactylus
 Ampelorex
@@ -33,6 +33,7 @@ DracoLux
 Entelolania
 Eremocanis
 Estemmenosuchus
+Fukuitops
 Geminideus
 Glyptosavis
 Gorgotrebax
@@ -44,7 +45,6 @@ Imperatosuchus
 Indochicyon
 Indolycan
 Indonemys
-Junior
 Magnaraptor
 Mammolania
 Megalocevia
@@ -61,7 +61,6 @@ Plateorex
 ProtoLux
 Protonodon
 Pteranokyrie
-Pyrorixis
 Rajadorixis
 Rajadotholus
 SahPanthera

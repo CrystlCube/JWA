@@ -1,4 +1,6 @@
 Aenocyonyx 20 203 U
+Aerospinosaurus 20 0 U
+Aerotitan 11 153 E
 Ailurarctos 11 3542 E
 Alacranix 25 120 A
 Alankydactylus 25 0 A
@@ -135,7 +137,9 @@ Eremotherium 15 70533 C
 Estemmenosuchus 20 153 U
 Eucladoceros 15 6544 E
 Euoplocephalus 10 107433 C
+Fukuimimus 16 101 L
 Fukuisaurus 15 3318 R
+Fukuitops 25 0 A
 Gallimimus 15 96934 C
 Geminideus 25 0 A
 Geminititan 21 111 U
@@ -174,7 +178,6 @@ Indoraptor2 16 450 L
 Inostrancevia 15 60505 C
 Irritator 15 7124 R
 Irritator2 5 118703 C
-Junior 20 150 U
 Kaprosuchus 15 2139 R
 Kelenken 15 6414 R
 Kentrosaurus 15 3274 E
@@ -260,6 +263,7 @@ Rajakylosaurus 20 103 L
 Rajasaurus 15 4187 E
 Rajatholus 17 250 L
 Rebel 16 415 L
+RebirthSpinosaurus 16 248 L
 Red 20 42 E
 Rexy 20 604 L
 Rinchenia 15 2933 E
@@ -298,6 +302,7 @@ Stegoceras 15 3541 E
 Stegoceratops 15 1783 E
 Stegodeus 17 210 L
 Stegosaurus 15 143523 C
+Struthiomimus 13 180 E
 Stygimoloch 15 5268 E
 StyracosaurusLux 23 273 U
 Suchomimus 5 115165 C
