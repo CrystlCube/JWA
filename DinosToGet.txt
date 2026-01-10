@@ -4,21 +4,18 @@ Alankydactylus
 Ampelorex
 Andrewtops
 AnkylosLux
-Antarctovenator
 Apatoceratops
-Aquicomilus
+Aquignathus
 Aquilosaurus
 Aquilotae
 Aquiraptor
-Aquisaurus
 Arctocanis
 Arctovasilas
 Ardontognathus
-Atrocodistis
+Atrocomaxima
 Atromolistis
 Becklejara
 Becklerizaurus
-Ceramagnus
 Ceranosaurus
 Cerastegotops
 Compsocaulus
@@ -38,7 +35,6 @@ Geminideus
 Glyptosavis
 Gorgotrebax
 Gryganyth
-HaastMaximus
 HadrosLux
 HydraBoa
 Imperatosuchus
@@ -54,6 +50,7 @@ Monolomoth
 MortemRex
 Mutadon
 Nominrex
+Nyctopteryx
 Ovinnolophosaurus
 Ovylenken
 Plateopikasaurus
@@ -70,7 +67,5 @@ Skoonametrodon
 Skorpiostegotops
 Spinotops
 Testacornibus
-Titanotarkus
 Titanotholus
 Trykovenator
-Tyrannodactylus

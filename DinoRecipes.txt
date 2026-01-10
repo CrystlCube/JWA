@@ -19,6 +19,7 @@ Ankyntrosaurus: Ankylosaurus Kentrosaurus
 Antarctovenator: Diplovenator Antarctopelta
 Apatoceratops: Nodopatotitan Nasutoceratops
 Aquicomilus: Aquilamimus Thylacosmilus
+Aquignathus: Aquiraptor Ardontognathus
 Aquilamimus: Gallimimus HasstEagle2
 Aquilosaurus: Aquicomilus Pachycephalosaurus
 Aquilotae: Aquilosaurus PantheraBlytheae
@@ -27,10 +28,12 @@ Aquisaurus: Aquilops Lystrosaurus
 Arctalces: Arctodus Cervalces
 Arctocanis: Ailurarctos ArmbrustersWolf
 Arctovasilas: Arctalces Testacornibus
+Ardentismaxima: Brachiosaurus Ardontosaurus
 Ardontognathus: Anurognathus Ardontosaurus
 Ardontosaurus: Argentinosaurus Secodontosaurus
 Atrocimoloch: Tiger Paramoloch
 Atrocodistis: Red Tragodistis
+Atrocomaxima: Constrictoraptor Ardentismaxima
 Atromolistis: Atrocodistis Atrocimoloch
 Bajatonodon: Edmontoguanodon Bajadasaurus
 Becklejara: Becklolyth Quetzaljara
@@ -47,11 +50,14 @@ Compsovenator: Compsoraptor Dracovenator
 Concakuisaurus: Concavenator Fukuisaurus
 Concatoloch: Concatosaurus Tuoramoloch
 Concatosaurus: Concakuisaurus Tenontosaurus
+Constrictoraptor: Panthera Dilophoboa
 Crichtomoloch: Crichtonsaurus Ankylomoloch
 Dakotacurus: Dakotanops Megistocurus
 Dakotanops: Gorgonops Dakotaraptor
+Darwezopteryx: Darwinopterus Hatzegopteryx
 Deinomimus: Deinotops Monomimus
 Deinotops: Deinosuchus Arctops
+Dilophoboa: Titanoboa Dilophosaurus2
 Diloracheirus: Deinocheirus Diloranosaurus
 Diloranosaurus: Dilophosaurus Ouranosaurus
 Dilozorion: Diloracheirus Quetzorion
@@ -106,6 +112,7 @@ Monostegotops: Stegoceratops Monolophosaurus
 Nodopatosaurus: Apatosaurus Nodosaurus
 Nodopatotitan: Giraffatitan Nodopatosaurus
 Nominrex: Phorurex Nomingia
+Nyctopteryx: Nyctosaurus Darwezopteryx
 Ovilophosaurus: Oviraptor Dilophosaurus
 Ovinnolophosaurus: Oviraptor2 Tyrannolophosaur
 Ovylenken: Oviraptor2 Grylenken
@@ -165,7 +172,6 @@ Trykovenator: Trykosaurus Antarctovenator
 Tryostronix: Baryonyx Postimetrodon
 Tsintamoth: WoollyMammoth Tsintaosaurus
 Tuoramoloch: Paramoloch Tuojiangosaurus
-Tyrannodactylus: TyrannosaurDoe Ankylodactylus
 Tyrannolophosaur: TyrannosaurusRex2 Dilophosaurus2
 Tyrannometrodon: Rexy Postimetrodon
 Utarinex: Dracorex Utasinoraptor

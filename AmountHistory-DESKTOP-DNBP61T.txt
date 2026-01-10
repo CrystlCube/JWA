@@ -28,7 +28,7 @@ Blue: 3721
 Bumpy: 3776
 Carbonemys: 22588
 Carnotaurus: 16955
-# Ceramagnus: 300
+Ceramagnus: 300
 Ceratosaurus: 1316
 Cervalces: 46129
 Compsognathus: 2564
@@ -73,7 +73,7 @@ Gorgotrebax: 260
 # Graciliraptor: 29
 Gryposuchus: 16174
 # HaastEagle: 1105
-# HaastMaximus: 200
+HaastMaximus: 200
 HadrosLux: 255
 HasstEagle2: 20835
 HydraBoa: 300
@@ -151,7 +151,7 @@ Tsintaosaurus: 13281
 Tuojiangosaurus: 57876
 Tupandactylus: 30968
 TyrannosaurBuck: 1978
-# TyrannosaurDoe: 1296
+TyrannosaurDoe: 1296
 TyrannosaurusRex: 3168
 TyrannosaurusRex2: 34788
 Utahraptor: 27960
@@ -179,7 +179,7 @@ Blue: 3571
 Brunette: 14492
 Bumpy: 3609
 Carnotaurus: 16305
-# Ceramagnus: 250
+Ceramagnus: 250
 Compsognathus2: 36754
 Concavenator: 9848
 # Crichtonsaurus: 2560
@@ -236,7 +236,7 @@ Tiger: 1354
 Titanosaurus: 8305
 Tsintaosaurus: 13231
 Tupandactylus: 32943
-# TyrannosaurDoe: 932
+TyrannosaurDoe: 932
 TyrannosaurusRex2: 34506
 WoollyMammoth: 19143
 WoollyRhino: 14398
@@ -316,7 +316,7 @@ Triceratops: 58293
 Tuojiangosaurus: 61688
 Tupandactylus: 37368
 TyrannosaurBuck: 2239
-# TyrannosaurDoe: 1238
+TyrannosaurDoe: 1238
 TyrannosaurusRex: 22084
 TyrannosaurusRex2: 45904
 Velociraptor: 160070
@@ -353,7 +353,7 @@ Brunette: 12238
 Bumpy: 3901
 Carbonemys: 23221
 Carnotaurus: 14679
-# Ceramagnus: 200
+Ceramagnus: 200
 Compsognathus2: 35424
 Concavenator: 15642
 # Crichtonsaurus: 1809
@@ -387,7 +387,7 @@ Glyptodon: 149605
 Gorgosaurus: 27537
 # Graciliraptor: 7
 Gryposuchus: 15580
-# HaastMaximus: 150
+HaastMaximus: 150
 HadrosLux: 205
 HasstEagle2: 10235
 HydraBoa: 250
@@ -491,7 +491,7 @@ Blue: 3039
 Bumpy: 3355
 Carbonemys: 23028
 Carnotaurus: 14729
-# Ceramagnus: 150
+Ceramagnus: 150
 Compsognathus2: 34758
 Concavenator: 14875
 # Crichtonsaurus: 1467
@@ -515,7 +515,7 @@ Giganotosaurus: 22171
 Gigantspinosaurus: 12539
 Glyptodon: 146605
 Graciliraptor: 1332
-# HaastMaximus: 100
+HaastMaximus: 100
 HasstEagle2: 8305
 Irritator: 28076
 Irritator2: 52097
@@ -573,114 +573,3 @@ TyrannosaurusRex2: 43413
 Velociraptor: 152371
 WoollyMammoth: 17916
 Wuerhosaurus: 32904
-
-11/22/2025
-Aerotitan: 5447
-Ailurarctos: 14948
-Amargasaurus: 47400
-Amphicyon: 224477
-Angel: 5926
-Animantarx: 2032
-Ankylosaurus2: 17277
-Antarctopelta: 20321
-Apatosaurus: 128730
-Aquilops: 13303
-Arctodus: 88299
-Arctops: 53471
-Argentinosaurus: 3598
-ArmbrustersWolf: 4175
-Bajadasaurus: 43865
-Baryonyx2: 33150
-Beta: 12570
-Blonde: 11925
-Bumpy: 11556
-Carnotaurus: 14296
-# Ceramagnus: 50
-Cervalces: 45976
-Concavenator: 14645
-Crichtonsaurus: 36242
-Dakotaraptor: 530
-Deinosuchus: 43577
-Delta: 7514
-Dilophosaurus: 54494
-Dilophosaurus2: 9930
-Dimetrodon: 82572
-Dimetrodon2: 53175
-Diplocaulus2: 65755
-DireWolf: 35371
-DistortusRex: 170
-Doedicurus: 14498
-Dracorex2: 163612
-Echo: 25447
-Edmontosaurus: 22345
-Eremotherium: 75426
-Fukuisaurus: 81832
-Gallimimus: 136766
-Ghost: 14291
-Giganotosaurus: 22021
-Gigantspinosaurus: 11983
-Glyptodon: 146580
-Gorgotrebax: 210
-Graciliraptor: 996
-# HaastMaximus: 50
-HasstEagle2: 1335
-Iguanodon: 23386
-Irritator2: 44540
-Kentrosaurus: 4235
-Koolasuchus2: 33609
-Lystrosaurus: 920
-Lythronax: 95678
-MarsupialLion: 93419
-Megalosaurus: 54978
-Microraptor: 9861
-Monolophosaurus: 17860
-Monolophosaurus2: 35776
-MorosIntrepidus: 9499
-Nodosaurus: 53354
-Ouranosaurus: 3472
-Oviraptor2: 3694
-PantheraBlytheae: 4443
-Parasaurolophus: 190890
-Phorusrhacos: 30787
-Preondactylus: 71382
-Protoceratops: 16797
-Pteranodon: 16008
-Purussaurus: 4987
-Purussaurus2: 96937
-Pyroraptor2: 33751
-Rajasaurus: 28348
-Rebel: 5545
-RebirthSpinosaurus: 1102
-Red: 15562
-Rexy: 2673
-Rinchenia: 11764
-RodriguesSolitaire: 14297
-Sarcosuchus: 7400
-Saurornitholestes: 122131
-Scelidosaurus: 3286
-Scolosaurus: 70930
-Scutosaurus: 11780
-Sinoceratops: 9833
-Skorpiovenator: 43464
-Sonorasaurus: 19308
-Sphaerotholus: 89954
-Stegoceras: 9922
-Struthiomimus: 15020
-Stygimoloch: 33780
-Suchomimus: 57977
-Tanycolagreus: 86947
-Tapejara: 20289
-Tenontosaurus: 57718
-Therizinosaurus: 26754
-Thylacosmilus: 50531
-Tiger: 13743
-Titanosaurus: 8005
-Triceratops: 48851
-Tupandactylus: 28022
-TyrannosaurBuck: 789
-TyrannosaurusRex: 21437
-TyrannosaurusRex2: 37973
-Velociraptor: 150583
-WoollyMammoth: 17884
-WoollyRhino: 13769
-Wuerhosaurus: 31651
