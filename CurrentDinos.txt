@@ -1,3 +1,5 @@
+Acrocanthops 20 10 L
+Acrocanthosaurus 15 247 E
 Aenocyonyx 21 86 U
 Aerospinosaurus 20 0 U
 Aerotitan 11 1558 E
@@ -17,9 +19,6 @@ Amargocephalus 15 555 E
 Ampelorex 20 0 U
 Ampelosaurus 16 1306 E
 Amphicyon 15 71132 C
-Andrewsarchus 10 16352 R
-Andrewtodon 20 54 E
-Andrewtops 20 156 U
 Angel 16 96 L
 Animantarx 15 2868 E
 Ankylocodon 11 112 R
@@ -76,6 +75,9 @@ Carbonemys 20 3544 E
 Carbotoceratops 18 244 L
 Carnotarkus 20 15 L
 Carnotaurus 20 9538 R
+Centroceratops 15 0 L
+CentrolophusLux 25 0 A
+Centrosaurus 1 2011 C
 Ceranosaurus 25 0 A
 Cerastegotops 25 0 A
 Ceratosaurus 21 134 U
@@ -230,7 +232,6 @@ Nyctosaurus 16 860 L
 Ophiacodon 5 67921 C
 Ouranosaurus 15 5170 E
 Ovilophosaurus 15 0 E
-Ovinnolophosaurus 20 175 U
 Oviraptor 10 4711 R
 Oviraptor2 20 141 E
 Ovylenken 20 0 U
@@ -240,6 +241,8 @@ PantheraBlytheae 20 5730 L
 Pantherator 21 48 U
 Paramoloch 20 111 L
 Parasaurolophus 15 64909 C
+ParasaurolophusLux 20 1155 L
+Parasauthops 21 20 U
 Phorurex 21 16 U
 Phorusaura 16 510 L
 Phorusrhacos 15 65162 C

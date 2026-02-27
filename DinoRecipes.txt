@@ -1,3 +1,4 @@
+Acrocanthops: Arctops Acrocanthosaurus
 Aenocyonyx: DireWolf Thylaconyx
 Aerospinosaurus: RebirthSpinosaurus Aerotitan
 Alankydactylus: Dreadactylus Alankyloceratops
@@ -8,8 +9,6 @@ Allodrigues: RodriguesSolitaire Alloraptor
 Alloraptor: Delta Allosaurus2
 Amargocephalus: Amargasaurus Euoplocephalus
 Ampelorex: Ampelosaurus TyrannosaurBuck
-Andrewtodon: Andrewsarchus Glyptodon
-Andrewtops: Andrewtodon Arctops
 Ankylocodon: Ophiacodon Ankylosaurus2
 Ankylodactylus: Preondactylus Ankylodicurus
 Ankylodicurus: Doedicurus Ankylocodon
@@ -42,6 +41,8 @@ Becklolyth: Blonde Saurolyth
 Becklophosaurus: Brunette Ovilophosaurus
 Carbotoceratops: Carbonemys Nasutoceratops
 Carnotarkus: Wuerhosaurus Purutaurus
+Centroceratops: Centrosaurus Protoceratops
+CentrolophusLux: Centroceratops Parasauthops
 Ceranosaurus: Rebel Skoonasaurus
 Cerastegotops: Skorpiostegotops Ceratosaurus
 Compsocaulus: Compsognathus Diplocaulus2
@@ -114,10 +115,10 @@ Nodopatotitan: Giraffatitan Nodopatosaurus
 Nominrex: Phorurex Nomingia
 Nyctopteryx: Nyctosaurus Darwezopteryx
 Ovilophosaurus: Oviraptor Dilophosaurus
-Ovinnolophosaurus: Oviraptor2 Tyrannolophosaur
 Ovylenken: Oviraptor2 Grylenken
 Pantherator: PantheraBlytheae Thylacotator
 Paramoloch: Parasaurolophus Stygimoloch
+Parasauthops: Acrocanthops ParasaurolophusLux
 Phorurex: Phorusaura Dracorex2
 Phorusaura: Phorusrhacos Maiasaura
 Plateopikasaurus: Plateosaurus Gigaspikasaur

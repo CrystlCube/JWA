@@ -2,7 +2,6 @@ Aerospinosaurus
 Alacranix
 Alankydactylus
 Ampelorex
-Andrewtops
 AnkylosLux
 Apatoceratops
 Aquignathus
@@ -11,11 +10,11 @@ Aquilotae
 Aquiraptor
 Arctocanis
 Arctovasilas
-Ardontognathus
 Atrocomaxima
 Atromolistis
 Becklejara
 Becklerizaurus
+CentrolophusLux
 Ceranosaurus
 Cerastegotops
 Compsocaulus
@@ -51,7 +50,6 @@ MortemRex
 Mutadon
 Nominrex
 Nyctopteryx
-Ovinnolophosaurus
 Ovylenken
 Plateopikasaurus
 Plateorex
@@ -59,7 +57,6 @@ ProtoLux
 Protonodon
 Pteranokyrie
 Rajadorixis
-Rajadotholus
 SahPanthera
 Sarcomantarx
 Segnotherisaurus
