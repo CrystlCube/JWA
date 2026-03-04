@@ -12,6 +12,8 @@ Arctocanis
 Arctovasilas
 Atrocomaxima
 Atromolistis
+Baryosaurus
+Baryotor
 Becklejara
 Becklerizaurus
 CentrolophusLux
@@ -43,6 +45,7 @@ Indonemys
 Magnaraptor
 Mammolania
 Megalocevia
+Megamimus
 Monkeydactyl
 Monkeyondactylus
 Monolomoth

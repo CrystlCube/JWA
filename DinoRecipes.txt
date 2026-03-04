@@ -35,6 +35,9 @@ Atrocodistis: Red Tragodistis
 Atrocomaxima: Constrictoraptor Ardentismaxima
 Atromolistis: Atrocodistis Atrocimoloch
 Bajatonodon: Edmontoguanodon Bajadasaurus
+Baryosaurus: Baryothus Sarcosaurus
+Baryothus: LeucisticBaryonyx Dreadnoughtus
+Baryotor: Megamimus Baryosaurus
 Becklejara: Becklolyth Quetzaljara
 Becklerizaurus: Becklophosaurus Segnotherisaurus
 Becklolyth: Blonde Saurolyth
@@ -103,6 +106,7 @@ Mammolania: Mammotherium Meiolania
 Mammotherium: Elasmotherium WoollyMammoth
 Megalocevia: Megalosuchus Albertocevia
 Megalosuchus: Gorgosuchus Megalosaurus
+Megamimus: Megaraptor Procerathomimus
 Megistocurus: Megistotherium Doedicurus
 Monkeyondactylus: Monkeydactyl Ankylodactylus
 Monolometrodon: Dimetrodon2 Monolophosaurus2
@@ -124,6 +128,7 @@ Phorusaura: Phorusrhacos Maiasaura
 Plateopikasaurus: Plateosaurus Gigaspikasaur
 Plateorex: Plateopikasaurus Tenontorex
 Postimetrodon: Postosuchus Dimetrodon
+Procerathomimus: Proceratosaurus Ornithomimus
 ProtoLux: Protonodon Crichtomoloch
 Protonodon: Protoceratops Bajatonodon
 Pteraquetzal: Pteranodon Quetzalcoatlus
